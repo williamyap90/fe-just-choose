@@ -1,0 +1,69 @@
+.RestaurantFinalCard ul {
+    border-radius: 10px;
+    max-height: 400px;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    margin-top: 0.5rem;
+    margin: 0.5rem auto;
+  }
+  .RestaurantFinalCard li {
+    border: 1px solid grey;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto auto 20px;
+    padding: 1rem;
+  }
+  
+  .Buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Buttons button {
+    width: 80%;
+    padding: 1rem;
+  }
+.card__main div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.RestaurantFinalCard {
+    box-sizing: border-box;
+  }
+  .RestaurantFinalCard img {
+    border: 1px solid red;
+    border-radius: 10px;
+    height: 190px;
+    width: 95vw;
+    display: flex;
+  }
+  .RestaurantFinalCard ul {
+    margin-top: 1rem;
+  }
+  .RestaurantFinalCard p {
+    line-height: 1.3rem;
+  }
+  .RestaurantFinalCard ol  {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 3fr 50px 50px;
+    border: 1px solid grey;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+  .RestaurantFinalCard .upvoted,
+  .RestaurantFinalCard .downvoted{
+      border-radius: 5px;
+      text-align: center;
+      color: white;
+  }
+  .RestaurantFinalCard .upvoted{
+      background: red;
+      margin-right: 5px;
+  }
+  .RestaurantFinalCard .downvoted{
+      background: green;
+  }
