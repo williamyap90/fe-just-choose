@@ -1,0 +1,21 @@
+.EventDeadline {
+  border: 1px solid red;
+  border-radius: 10px;
+  height: 130px;
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.shareLinkBox {
+  border: 1px solid red;
+  border-radius: 10px;
+  height: 80px;
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}

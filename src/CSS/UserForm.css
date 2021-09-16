@@ -1,0 +1,9 @@
+.UserForm input,
+.UserForm select {
+  width: 90vw;
+  text-align: center;
+}
+.UserForm input,
+UserForm select {
+  display: block;
+}

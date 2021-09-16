@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  margin: 0 0.5rem;
+}
+
+.Header {
+  text-align: center;
+  border-color: purple;
+  border-width: 2px;
+  border-style: solid;
+  min-height: 15vh;
+  padding: 0.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.HeaderTitle {
+  color: rgb(114, 31, 114);
+}
+
+.HeaderIntro {
+  text-align: center;
+  border-color: blue;
+  border-width: 2px;
+  border-style: solid;
+  min-height: 15vh;
+  padding: 0.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.HeaderWelcomeText {
+  padding: 0.5rem;
+}
+
+.HeaderLoginSetup {
+  text-align: center;
+  border-color: rgb(255, 0, 255);
+  border-width: 2px;
+  border-style: solid;
+  min-height: 15vh;
+  padding: 0.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.HeaderLoginText {
+  padding: 0.5rem;
+}
