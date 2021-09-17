@@ -41,9 +41,7 @@ function App() {
       <Route exact path ="/Restaurant-list">
           <RestaurantList/>
       </Route>
-      <Route exact path ="/Restaurant-summary">
-          <RestaurantFinalList/>
-      </Route>
+      
       <Route exact path ="/Sharable-Link">
           <SharableLink/>
       </Route>

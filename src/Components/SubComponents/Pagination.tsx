@@ -9,7 +9,6 @@ interface Props {
     filters : any;
 }
 export default function Pagination(props: Props) {
-    type ClickEvent = React.MouseEvent<HTMLElement>;
     
     const handleClick = (e: any) => {
         props.setFilters((currFilters: any) => {
