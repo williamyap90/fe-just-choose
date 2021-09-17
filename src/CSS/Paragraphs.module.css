@@ -1,0 +1,36 @@
+.restaurant-info-title {
+    text-align: center;
+    font-size: 2rem;
+    color: purple;
+}
+
+.restaurant-info-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    color: purple;
+}
+.restaurant-info-additional {
+    font-size: 1.5rem;
+    color: purple;
+    margin: 2.5%;
+}
+
+.thumbs-up {
+    font-size: 2rem;
+    text-align: right;
+    margin-bottom: 0.3rem;
+}
+
+.welcome-text {
+    text-align: center;
+}
+
+.form-label-paragraph {
+    font-size: 1.2rem;
+}
+
+.shortlist-info {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.3rem;
+}
