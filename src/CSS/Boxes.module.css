@@ -1,0 +1,22 @@
+.shortlist-filters-container {
+    max-width: 350px;
+    margin: auto;
+}
+
+.restaurant-info-container {
+    max-width: 350px;
+    border-top: 2px solid black;
+    margin: auto;
+}
+
+.shortlist-info-presubmission-container {
+    max-width: 350px;
+    margin: 1rem auto;
+    border: 2px solid black;
+   
+}
+
+.pagination-container {
+    max-width: 350px;
+    margin: auto;
+}

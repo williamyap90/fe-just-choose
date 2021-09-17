@@ -16,7 +16,6 @@ import { useState } from "react";
 
 function App() {
 
-
   //at some point need to allow this to be null as an option
   interface IUser {
     name : string;
