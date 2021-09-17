@@ -11,7 +11,10 @@ import SharableLink from "./Components/SharableLink";
 import UserVote from "./Components/UserVote";
 import UserEndVotePath from "./Components/UserEndVotePath";
 import Results from "./Components/Results";
+import Winner from "./Components/Winner";
+import NotFound from "./Components/NotFound"
 import { useState } from "react";
+import ViewHistory from "./Components/ViewHistory";
 
 function App() {
 
@@ -56,6 +59,15 @@ function App() {
       </Route>
       <Route exact path ="/EventResultLandingPage">
         <Results/>
+      </Route>
+      <Route exact path="/ViewHistory">
+        <ViewHistory/>
+      </Route>
+      <Route exact path="/winner">
+      <Winner />
+      </Route>
+      <Route path ="*">
+        <NotFound />
       </Route>
       </Switch>
     </div>
