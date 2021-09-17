@@ -34,3 +34,13 @@
     text-align: center;
     padding: 0.3rem;
 }
+.shortlisted-restaurant-info {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.delete-icon {
+    font-size: 2rem;
+    color: purple;
+    text-align: right;
+}

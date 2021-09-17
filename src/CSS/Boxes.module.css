@@ -20,3 +20,9 @@
     max-width: 350px;
     margin: auto;
 }
+
+.shortlisted-restaurant-container {
+    border: 2px solid black;
+    max-width: 350px;
+    margin: 1rem auto;
+}

@@ -9,13 +9,14 @@ import Pagination from "./SubComponents/Pagination";
 import ShortlistSubmission from "./SubComponents/ShortlistSubmission";
 import RestaurantFilters from "./SubComponents/RestaurantFilters";
 import { IFilters, IUser } from "../Components/Interfaces/Interfaces";
+import RestaurantFinalList from "./RestaurantFinalList";
 
 interface Props {
   loggedInUser: IUser;
 }
 
 const OrganiserDashboard = (props: Props) => {
-
+  const [reviewingShortlist, setReviewingShortlist] = useState(false);
   const [restaurantSelection, setRestaurantSelection] = useState([]);
   const [restaurantShortlist, setRestaurantShortlist] = useState([]);
   const [totalNumberOfResults, setTotalNumberOfResults] = useState(0);
@@ -50,11 +51,14 @@ const OrganiserDashboard = (props: Props) => {
     getRestaurantsFromYelp();
   }, [filters.offset])
 
+if(reviewingShortlist) 
+  return <RestaurantFinalList restaurantShortlist={restaurantShortlist} setRestaurantShortlist={setRestaurantShortlist}/>
 
   return (
     <>
+    
     <RestaurantFilters loggedInUser={props.loggedInUser} filters={filters} setFilters={setFilters} setIsLoading={setIsLoading} setRestaurantSelection={setRestaurantSelection} setTotalNumberOfResults={setTotalNumberOfResults}/>
-    <ShortlistSubmission restaurantShortlist={restaurantShortlist}/>
+    <ShortlistSubmission restaurantShortlist={restaurantShortlist} setReviewingShortlist={setReviewingShortlist}/>
       
       { !isLoading ? 
       restaurantSelection.map((restaurant: any) => {
@@ -109,7 +113,7 @@ const OrganiserDashboard = (props: Props) => {
     }
     { totalNumberOfResults > 0 && <>
      <Pagination setFilters={setFilters} totalNumberOfResults={totalNumberOfResults} filters={filters}/>
-     <ShortlistSubmission restaurantShortlist={restaurantShortlist} />
+     <ShortlistSubmission restaurantShortlist={restaurantShortlist} setReviewingShortlist={setReviewingShortlist} />
       </>
 }
    </>
