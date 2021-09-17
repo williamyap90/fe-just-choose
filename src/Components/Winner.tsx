@@ -1,5 +1,6 @@
 import React from 'react';
 import "../CSS/Winner.css"
+import Comments from "../Components/Comments"
 const Winner = () => {
     return (
         <section>
@@ -41,10 +42,9 @@ const Winner = () => {
                             <span className="upvoted">14</span>
                             <span className="downvoted">5</span>
                         </ol>
-
-
-
                     </ul>
+                    <button>view comments</button>
+                    <Comments />
                 </div>
         </section>
     );
