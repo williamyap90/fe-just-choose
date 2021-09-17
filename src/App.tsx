@@ -15,17 +15,13 @@ import Winner from "./Components/Winner";
 import NotFound from "./Components/NotFound"
 import { useState } from "react";
 import ViewHistory from "./Components/ViewHistory";
+import { IUser } from "./Components/Interfaces/Interfaces"
 
 function App() {
 
-  //at some point need to allow this to be null as an option
-  interface IUser {
-    name : string;
-    status : 'registered' | 'guest';
-  }
-  
-  //at some point need to allow this to be null as an option
+
   const [loggedInUser, setLoggedInUser] = useState<IUser>({ name : 'SWAMmer', status : 'registered'});
+
   return (
     <div className="App">
       <Header />

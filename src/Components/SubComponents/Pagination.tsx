@@ -1,6 +1,4 @@
-import Paragraphs from '../CSS/Paragraphs.module.css'
 import Boxes from '../../CSS/Boxes.module.css'
-import Forms from '../../CSS/Forms.module.css'
 
 
 
