@@ -1,9 +1,13 @@
-.UserForm input,
+/* .UserForm input,
 .UserForm select {
   width: 90vw;
+  max-width: 300px;
+  margin: auto;
   text-align: center;
 }
 .UserForm input,
 UserForm select {
+  max-width: 300px;
+
   display: block;
-}
+} */
