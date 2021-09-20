@@ -40,15 +40,19 @@ const RestaurantFinalList = (props: Props) => {
       //should be wrapped into a form and done on submit rather than click...
       const handleConfirmSelection = (e: ClickEvent) => {
             e.preventDefault();
+            
             if(eventName.length >= 3 && props.restaurantShortlist.length > 1) {
+                let currentTime = new Date()
+                    currentTime.setHours(currentTime.getHours() + 2)
+                    console.log(currentTime)
                 saveEvent({
                     eventName : eventName,
                     eventURL : '',
                     organiser : props.loggedInUser,
-                    endDate : '',
+                    endDate : '2021-09-28T19:08:04.963Z',
                     restaurantList : props.restaurantShortlist,
                 }).then(() => {
-                    props.setReviewingShortlist(false);
+                    props.setReviewingShortlist(false);     
                     props.setEventConfirmed(true);
                 }).catch((e) => {
                     console.log('some databse error')
