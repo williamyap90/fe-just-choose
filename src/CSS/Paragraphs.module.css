@@ -44,3 +44,13 @@
     color: purple;
     text-align: right;
 }
+
+.summary-header {
+    font-size: 2rem;
+    color: purple;
+}
+
+.summary-event-name {
+    font-size: 3rem;
+    color: purple;
+}

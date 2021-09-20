@@ -23,6 +23,12 @@ export const getRestaurants = async (filters: any) => {
     return response.data;
 }
 
+export const saveEvent = async (eventInfo: any) => {
+    //write event information into database
+
+    console.log('WRITING TO DATABASE')
+    console.log(eventInfo);
+}
 
 
 

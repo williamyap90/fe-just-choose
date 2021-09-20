@@ -10,12 +10,14 @@ import ShortlistSubmission from "./SubComponents/ShortlistSubmission";
 import RestaurantFilters from "./SubComponents/RestaurantFilters";
 import { IFilters, IUser } from "../Components/Interfaces/Interfaces";
 import RestaurantFinalList from "./RestaurantFinalList";
+import EventConfirmation from "./EventConfirmation";
 
 interface Props {
   loggedInUser: IUser;
 }
 
 const OrganiserDashboard = (props: Props) => {
+  const [eventConfirmed, setEventConfirmed] = useState(false);
   const [reviewingShortlist, setReviewingShortlist] = useState(false);
   const [restaurantSelection, setRestaurantSelection] = useState([]);
   const [restaurantShortlist, setRestaurantShortlist] = useState([]);
@@ -29,6 +31,13 @@ const OrganiserDashboard = (props: Props) => {
     price: null,
     offset: 0,
   });
+
+  // const [event, setEvent] = useState({
+  //   organiser: props.loggedInUser.name,
+  //   restaurantShortlist: [],
+  //   name: '',
+  //   closingDate : null,
+  // })
 
   const getRestaurantsFromYelp = () => {
     if(filters.location.length >= 1) {
@@ -51,9 +60,12 @@ const OrganiserDashboard = (props: Props) => {
     getRestaurantsFromYelp();
   }, [filters.offset])
 
-if(reviewingShortlist) 
-  return <RestaurantFinalList restaurantShortlist={restaurantShortlist} setRestaurantShortlist={setRestaurantShortlist}/>
+  if(reviewingShortlist) 
+    return <RestaurantFinalList loggedInUser={props.loggedInUser} setEventConfirmed={setEventConfirmed} restaurantShortlist={restaurantShortlist} setRestaurantShortlist={setRestaurantShortlist} setReviewingShortlist={setReviewingShortlist}/>
+  if(eventConfirmed)
+    return <EventConfirmation />
 
+//if not on shortlist or event confirmation then render the filters and page where you choose the shortlist
   return (
     <>
     

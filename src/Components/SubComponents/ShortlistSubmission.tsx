@@ -10,8 +10,15 @@ interface Props {
 export default function ShortlistSubmission(props: Props) {
     type ClickEvent = React.MouseEvent<HTMLInputElement>;
 
+    //change handleclick to be a handlesubmit and put it in form element rather than input element. 
     const handleClick = ((e: ClickEvent) => {
-        props.setReviewingShortlist(true);
+        e.preventDefault();
+        if(props.restaurantShortlist.length > 1) {
+          props.setReviewingShortlist(true);
+        } else {
+          //need better error message - or jsut dont render button unless there are enough restaurants in shortlist
+          alert('Need at least 2 restaurants in shortlist')
+        }
     })
 
   return (
