@@ -22,7 +22,6 @@ const RestaurantFinalList = (props: Props) => {
     type SubmitEvent = React.FormEvent<HTMLFormElement>;
     type InputEvent = React.ChangeEvent<HTMLInputElement>;
 
-    console.log(props.restaurantShortlist);
     const [eventClosingDate, setEventClosingDate] = useState('');
     const [eventNameInput, setEventNameInput] = useState('');
     const [nameChosen, setNameChosen] = useState(false);
@@ -46,7 +45,6 @@ const RestaurantFinalList = (props: Props) => {
             if(props.eventName.length >= 3 && props.restaurantShortlist.length > 1) {
                 let currentTime = new Date()
                     currentTime.setHours(currentTime.getHours() + 2)
-                    console.log(currentTime)
                     const restaurantList = extractRestaurantInfo(props.restaurantShortlist);
                 saveEvent({
                     eventName : props.eventName,

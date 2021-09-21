@@ -23,10 +23,10 @@ export const extractRestaurantInfo = (shortlist: any) => {
             }
 
             if(property === 'image_url') {
-                newObj['image_url'] = restObj.image_url;
+                newObj['imageUrl'] = restObj.image_url;
             }
             if(property === 'name') {
-                newObj['name'] = restObj.name;
+                newObj['restaurantName'] = restObj.name;
             }
             if(property === 'price') {
                 newObj['price'] = restObj.price;
