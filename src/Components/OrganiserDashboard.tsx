@@ -22,6 +22,8 @@ const OrganiserDashboard = (props: Props) => {
   const [restaurantSelection, setRestaurantSelection] = useState([]);
   const [restaurantShortlist, setRestaurantShortlist] = useState([]);
   const [totalNumberOfResults, setTotalNumberOfResults] = useState(0);
+  const [eventName, setEventName] = useState('');
+
   const [isLoading, setIsLoading] = useState(false);
   const [filters, setFilters] = useState<IFilters>({
     location: "",
@@ -61,9 +63,9 @@ const OrganiserDashboard = (props: Props) => {
   }, [filters.offset])
 
   if(reviewingShortlist) 
-    return <RestaurantFinalList loggedInUser={props.loggedInUser} setEventConfirmed={setEventConfirmed} restaurantShortlist={restaurantShortlist} setRestaurantShortlist={setRestaurantShortlist} setReviewingShortlist={setReviewingShortlist}/>
+    return <RestaurantFinalList eventName={eventName} setEventName={setEventName} loggedInUser={props.loggedInUser} setEventConfirmed={setEventConfirmed} restaurantShortlist={restaurantShortlist} setRestaurantShortlist={setRestaurantShortlist} setReviewingShortlist={setReviewingShortlist}/>
   if(eventConfirmed)
-    return <EventConfirmation />
+    return <EventConfirmation eventName={eventName} setEventName={setEventName} />
 
 //if not on shortlist or event confirmation then render the filters and page where you choose the shortlist
   return (

@@ -6,6 +6,7 @@ import { saveEvent } from "../API-Funcs/API";
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
 import { IUser } from "../Components/Interfaces/Interfaces";
+import { extractRestaurantInfo } from "../Utils/Utils";
 
 interface Props {
     restaurantShortlist: any;
@@ -13,14 +14,15 @@ interface Props {
     setReviewingShortlist : any;
     setEventConfirmed : any;
     loggedInUser : IUser;
+    eventName: string;
+    setEventName: (val: string) => void;
 }
 const RestaurantFinalList = (props: Props) => {
     type ClickEvent = React.MouseEvent<HTMLButtonElement>;
     type SubmitEvent = React.FormEvent<HTMLFormElement>;
     type InputEvent = React.ChangeEvent<HTMLInputElement>;
 
-
-    const [eventName, setEventName] = useState('');
+    console.log(props.restaurantShortlist);
     const [eventClosingDate, setEventClosingDate] = useState('');
     const [eventNameInput, setEventNameInput] = useState('');
     const [nameChosen, setNameChosen] = useState(false);
@@ -29,7 +31,7 @@ const RestaurantFinalList = (props: Props) => {
 
     const handleSubmit = (e: SubmitEvent) => {
         e.preventDefault();
-        setEventName(eventNameInput);
+        props.setEventName(eventNameInput);
         setNameChosen(true);
       };
 
@@ -41,16 +43,16 @@ const RestaurantFinalList = (props: Props) => {
       const handleConfirmSelection = (e: ClickEvent) => {
             e.preventDefault();
             
-            if(eventName.length >= 3 && props.restaurantShortlist.length > 1) {
+            if(props.eventName.length >= 3 && props.restaurantShortlist.length > 1) {
                 let currentTime = new Date()
                     currentTime.setHours(currentTime.getHours() + 2)
                     console.log(currentTime)
+                    const restaurantList = extractRestaurantInfo(props.restaurantShortlist);
                 saveEvent({
-                    eventName : eventName,
-                    eventURL : '',
-                    organiser : props.loggedInUser,
+                    eventName : props.eventName,
+                    organiser : props.loggedInUser.name,
                     endDate : '2021-09-28T19:08:04.963Z',
-                    restaurantList : props.restaurantShortlist,
+                    restaurantList : restaurantList,
                 }).then(() => {
                     props.setReviewingShortlist(false);     
                     props.setEventConfirmed(true);
@@ -77,7 +79,7 @@ const RestaurantFinalList = (props: Props) => {
 
             </form> </>
             : <>
-            <p className={Paragraphs["summary-event-name"]}>{eventName}</p>
+            <p className={Paragraphs["summary-event-name"]}>{props.eventName}</p>
             <button onClick={() => setNameChosen(false)}>Edit Name</button>
             </>
             }

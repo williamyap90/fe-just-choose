@@ -33,8 +33,13 @@ export const saveEvent = async (eventInfo: any) => {
     console.log(response.data)
     return response.data
 
-    console.log('WRITING TO DATABASE')
-    console.log(eventInfo);
+  
+}
+
+export const fetchEvent = async (eventName: string) => {
+    const response = await reviewsAPI.get(`events/${eventName}`);
+
+    return response.data;
 }
 
 
