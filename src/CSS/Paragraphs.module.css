@@ -54,3 +54,12 @@
     font-size: 3rem;
     color: purple;
 }
+
+.vote-yes-or-no-icons {
+    font-size: 3rem;
+    color: blue;
+}
+
+.vote-yes-or-no-icons:hover {
+    cursor: pointer;
+}

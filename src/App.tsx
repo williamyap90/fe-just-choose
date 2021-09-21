@@ -6,6 +6,7 @@ import SignUpPage from "./Components/SignUpPage"
 import LoginPage from "./Components/LoginPage"
 import OrganiserDashboard from "./Components/OrganiserDashboard";
 import RestaurantList from "./Components/RestaurantList";
+import VoterLandingPage from "./Components/VoterLandingPage";
 import RestaurantFinalList from "./Components/RestaurantFinalList";
 import SharableLink from "./Components/SharableLink";
 import UserVote from "./Components/UserVote";
@@ -29,6 +30,9 @@ function App() {
       <Route exact path="/"> 
         <WelcomePage loggedInUser={loggedInUser} />
       </Route>
+      <Route exact path="/event/:eventID">
+        <VoterLandingPage />
+      </Route>
       <Route exact path="/Signup-page">
         <SignUpPage/>
       </Route>
@@ -51,9 +55,7 @@ function App() {
       <Route exact path ="/UserEndVote">
           <UserEndVotePath/>
       </Route>
-      <Route exact path ="/EventResultLandingPage">
-        <Results/>
-      </Route>
+     
       <Route exact path="/ViewHistory">
         <ViewHistory/>
       </Route>
