@@ -4,19 +4,11 @@ import { Route, Switch } from "react-router-dom";
 import WelcomePage from "./Components/WelcomePage";
 import SignUpPage from "./Components/SignUpPage"
 import LoginPage from "./Components/LoginPage"
-import OrganiserDashboard from "./Components/OrganiserDashboard";
-import RestaurantList from "./Components/RestaurantList";
-import VoterLandingPage from "./Components/VoterLandingPage";
-import RestaurantFinalList from "./Components/RestaurantFinalList";
-import SharableLink from "./Components/SharableLink";
-import UserVote from "./Components/UserVote";
-import UserEndVotePath from "./Components/UserEndVotePath";
-import Results from "./Components/Results";
-import Winner from "./Components/Winner";
+import VoterLandingPage from "./Components/VoterJourney/VoterLandingPage";
 import NotFound from "./Components/NotFound"
 import { useState } from "react";
-import ViewHistory from "./Components/ViewHistory";
 import { IUser } from "./Components/Interfaces/Interfaces"
+import OrganiserLandingPage from "./Components/OrganiserJourney/OrganiserLandingPage";
 
 function App() {
 
@@ -30,7 +22,10 @@ function App() {
       <Route exact path="/"> 
         <WelcomePage loggedInUser={loggedInUser} />
       </Route>
-      <Route exact path="/event/:eventID">
+      <Route exact path="/dashboard">
+        <OrganiserLandingPage loggedInUser={loggedInUser} />
+      </Route>
+      <Route exact path="/event/:eventName">
         <VoterLandingPage />
       </Route>
       <Route exact path="/Signup-page">
@@ -38,29 +33,6 @@ function App() {
       </Route>
       <Route exact path="/Login-Page">
         <LoginPage/>
-      </Route>
-      <Route exact path ="/Dashboard">
-          <OrganiserDashboard loggedInUser={loggedInUser}/>
-      </Route>
-      <Route exact path ="/Restaurant-list">
-          <RestaurantList/>
-      </Route>
-      
-      <Route exact path ="/Sharable-Link">
-          <SharableLink/>
-      </Route>
-      <Route exact path ="/UserVote">
-          <UserVote/>
-      </Route>
-      <Route exact path ="/UserEndVote">
-          <UserEndVotePath/>
-      </Route>
-     
-      <Route exact path="/ViewHistory">
-        <ViewHistory/>
-      </Route>
-      <Route exact path="/winner">
-      <Winner />
       </Route>
       <Route path ="*">
         <NotFound />

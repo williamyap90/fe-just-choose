@@ -1,16 +1,15 @@
-import Boxes from "../../CSS/Boxes.module.css";
-import Paragraphs from "../../CSS/Paragraphs.module.css";
-import Forms from "../../CSS/Forms.module.css";
-import { MouseEventHandler } from "react";
+import Boxes from "../../../CSS/Boxes.module.css";
+import Paragraphs from "../../../CSS/Paragraphs.module.css";
+import {  IYelpRestaurant } from "../../Interfaces/Interfaces";
+
 
 interface Props {
-    restaurantShortlist: any;
-    setReviewingShortlist: any;
+    restaurantShortlist: IYelpRestaurant[];
+    setReviewingShortlist: (val: boolean) => void;
 }
 export default function ShortlistSubmission(props: Props) {
-    type ClickEvent = React.MouseEvent<HTMLInputElement>;
+    type ClickEvent = React.MouseEvent<HTMLButtonElement>;
 
-    //change handleclick to be a handlesubmit and put it in form element rather than input element. 
     const handleClick = ((e: ClickEvent) => {
         e.preventDefault();
         if(props.restaurantShortlist.length > 1) {
@@ -26,14 +25,7 @@ export default function ShortlistSubmission(props: Props) {
       <p className={Paragraphs["shortlist-info"]}>
         Restaurants shortlisted: {props.restaurantShortlist.length}
       </p>
-      <form className={Forms["shortlist-submission"]}>
-        <input
-          className={Forms["shortlist-submission-button"]}
-          type="submit"
-          value="Review List"
-          onClick={handleClick}
-        />
-      </form>
+      <button onClick={handleClick}>Review List</button>
       <p className={Paragraphs["shortlist-info"]}>
         Select restaurants from the selection to add to your shortlist
       </p>

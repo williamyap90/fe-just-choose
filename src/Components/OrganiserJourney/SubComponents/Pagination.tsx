@@ -1,7 +1,4 @@
-import Boxes from '../../CSS/Boxes.module.css'
-
-
-
+import Boxes from '../../../CSS/Boxes.module.css'
 
 interface Props {
     totalNumberOfResults: number;
@@ -12,11 +9,8 @@ export default function Pagination(props: Props) {
     
     const handleClick = (e: any) => {
         props.setFilters((currFilters: any) => {
-            console.log(e)
-            console.log(e.target);
             const newFilters = {...currFilters};
             newFilters.offset = e.target.id === 'next' ? newFilters.offset+=10 : newFilters.offset-=10;
-            console.log(newFilters)
             return newFilters;
         })
     }

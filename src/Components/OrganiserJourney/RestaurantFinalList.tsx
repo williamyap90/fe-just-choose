@@ -1,18 +1,17 @@
-import "../CSS/RestaurantFinalList.css"
-import Boxes from "../CSS/Boxes.module.css";
-import Paragraphs from "../CSS/Paragraphs.module.css";
+import Boxes from "../../CSS/Boxes.module.css";
+import Paragraphs from "../../CSS/Paragraphs.module.css";
 import { useState } from "react";
-import { saveEvent } from "../API-Funcs/API";
+import { saveEvent } from "../../API-Funcs/API";
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
-import { IUser } from "../Components/Interfaces/Interfaces";
-import { extractRestaurantInfo } from "../Utils/Utils";
+import { IUser, IYelpRestaurant } from "../Interfaces/Interfaces";
+import { extractRestaurantInfo } from "../../Utils/Utils";
 
 interface Props {
-    restaurantShortlist: any;
+    restaurantShortlist: IYelpRestaurant[];
     setRestaurantShortlist : any;
-    setReviewingShortlist : any;
-    setEventConfirmed : any;
+    setReviewingShortlist : (val: boolean) => void;
+    setEventConfirmed : (val: boolean) => void;
     loggedInUser : IUser;
     eventName: string;
     setEventName: (val: string) => void;
@@ -22,9 +21,9 @@ const RestaurantFinalList = (props: Props) => {
     type SubmitEvent = React.FormEvent<HTMLFormElement>;
     type InputEvent = React.ChangeEvent<HTMLInputElement>;
 
-    const [eventClosingDate, setEventClosingDate] = useState('');
+    const [eventClosingDate, setEventClosingDate] = useState('2021-09-28T19:08:04.963Z');
     const [eventNameInput, setEventNameInput] = useState('');
-    const [nameChosen, setNameChosen] = useState(false);
+    const [nameChosen, setNameChosen] = useState(false); //used to toggle between name input form and displaying the chosen name
  
     
 
@@ -38,24 +37,21 @@ const RestaurantFinalList = (props: Props) => {
         setEventNameInput(e.target.value);
       };
 
-      //should be wrapped into a form and done on submit rather than click...
       const handleConfirmSelection = (e: ClickEvent) => {
             e.preventDefault();
             
             if(props.eventName.length >= 3 && props.restaurantShortlist.length > 1) {
-                let currentTime = new Date()
-                    currentTime.setHours(currentTime.getHours() + 2)
-                    const restaurantList = extractRestaurantInfo(props.restaurantShortlist);
+               
+                const restaurantList = extractRestaurantInfo(props.restaurantShortlist); //turns the shortlist into a proper object to enter into database
                 saveEvent({
                     eventName : props.eventName,
                     organiser : props.loggedInUser.name,
-                    endDate : '2021-09-28T19:08:04.963Z',
+                    endDate : eventClosingDate,
                     restaurantList : restaurantList,
                 }).then(() => {
                     props.setReviewingShortlist(false);     
                     props.setEventConfirmed(true);
                 }).catch((e) => {
-                    console.log('some databse error')
                     console.log(e);
                 })
             } else {
@@ -69,6 +65,7 @@ const RestaurantFinalList = (props: Props) => {
           
             <p className={Paragraphs["summary-header"]}>Shortlist</p>
 
+            {/* //enter name or display chosen name // */}
             { !nameChosen ? <>
             <label htmlFor="eventName">Please choose a name for your event</label>
             <form onSubmit={handleSubmit}>
@@ -81,16 +78,18 @@ const RestaurantFinalList = (props: Props) => {
             <button onClick={() => setNameChosen(false)}>Edit Name</button>
             </>
             }
+
+
+            {/* //display the short list// */}
             { props.restaurantShortlist.map((restaurant: any) => {
                 return (
-                    <div className={Boxes["shortlisted-restaurant-container"]}>
+                    <div key={restaurant.id} className={Boxes["shortlisted-restaurant-container"]}>
                         <p className={Paragraphs["shortlisted-restaurant-info"]}>
                             {restaurant.name} - {restaurant.rating}
                         </p>
                         <p  onClick={() => {
                             props.setRestaurantShortlist((currShortlist: any) => {
                                 const newShortList = [...currShortlist];
-                                console.log(newShortList);
                                 const index = newShortList.findIndex((rest: any) => rest.id === restaurant.id);
                                 newShortList.splice(index, 1);
                                 return newShortList;

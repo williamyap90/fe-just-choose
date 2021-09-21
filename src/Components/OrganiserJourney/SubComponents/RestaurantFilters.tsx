@@ -1,8 +1,8 @@
-import Boxes from "../../CSS/Boxes.module.css";
-import Paragraphs from "../../CSS/Paragraphs.module.css";
-import Forms from "../../CSS/Forms.module.css";
-import { getRestaurants } from "../../API-Funcs/API";
-import { IFilters, IUser } from "../Interfaces/Interfaces"
+import Boxes from "../../../CSS/Boxes.module.css";
+import Paragraphs from "../../../CSS/Paragraphs.module.css";
+import Forms from "../../../CSS/Forms.module.css";
+import { getRestaurants } from "../../../API-Funcs/API";
+import { IFilters, IUser } from "../../Interfaces/Interfaces"
 
 
 
@@ -25,7 +25,6 @@ export default function RestaurantFilters(props: Props) {
     const handleChange = (e: SelectEvent | InputEvent) => {
         props.setFilters((currFilters: any) => {
           const newFilters = { ...currFilters };
-          
           switch (e.target.id) {
             case "Distance":
               newFilters.radius = e.target.value;
@@ -47,11 +46,9 @@ export default function RestaurantFilters(props: Props) {
       const handleSubmit = (e: SubmitEvent) => {
         e.preventDefault();
         getRestaurantsFromYelp();
-    
       };
 
       const getRestaurantsFromYelp = () => {
-    
         if(props.filters.location.length >= 1) {
             props.setIsLoading(true);
             getRestaurants(props.filters)
