@@ -188,6 +188,8 @@ export default function VoterLandingPage() {
                                         {restaurant &&
                                             restaurant.restaurantName}
                                     </p>
+                            {restaurant.categories.some((category: any) => category === 'Vegan' || category === 'Vegetarian') && <p className={Paragraphs['veggie-icon']}><i className="fas fa-leaf"></i></p>}
+
                                     <p>
                                         {restaurant &&
                                             restaurant.categories.map(

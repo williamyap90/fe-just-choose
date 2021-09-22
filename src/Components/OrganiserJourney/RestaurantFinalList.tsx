@@ -113,6 +113,8 @@ const RestaurantFinalList = (props: Props) => {
                         key={restaurant.id}
                         className={Boxes['shortlisted-restaurant-container']}
                     >
+                            {restaurant.categories.some((category: any) => category.title === 'Vegan' || category.title === 'Vegetarian') && <p className={Paragraphs['veggie-icon']}><i className="fas fa-leaf"></i></p>}
+
                         <p
                             className={
                                 Paragraphs['shortlisted-restaurant-info']
