@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Monda&family=Slabo+13px&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -7,42 +8,68 @@
 html {
     font-size: 62.5%;
     text-align: center;
+    font-family: var(--ff-secondary);
 }
 
+:root {
+    /* Fonts */
+    --ff-primary: sans-serif;
+    --ff-secondary: 'Monda', sans-serif;
+
+    /* Font weights */
+    --fw-regular: 400;
+    --fw-bold: 800;
+
+    /* Font size */
+    --fs-regular: 1.6rem;
+    --fs-header: 4.6rem;
+
+    /* Colours */
+    --clr-primary: #6d036d;
+    --clr-secondary: #996199;
+    --clr-light: #fff;
+    --clr-dark: rgb(33, 33, 33);
+}
 .App {
     margin: 0 0.5rem;
 }
 
-.Header {
-    text-align: center;
-    border-color: purple;
-    border-width: 2px;
-    border-style: solid;
-    min-height: 15vh;
-    padding: 0.25rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+/* Header */
+.header-container {
+    border: 2px solid red;
+    min-height: 8vh;
 }
 
-.HeaderTitle {
-    color: rgb(114, 31, 114);
-}
-
-.HeaderIntro {
-    text-align: center;
+/* Welcome section */
+.welcome-intro {
+    text-align: left;
     border-color: blue;
     border-width: 2px;
     border-style: solid;
-    min-height: 15vh;
-    padding: 0.25rem;
+    min-height: 50vh;
+    padding: 3em;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
-.HeaderWelcomeText {
-    padding: 0.5rem;
+.welcome-intro--intro {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-regular);
+    color: red;
+}
+.welcome-intro--header {
+    color: var(--clr-primary);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-header);
+    font-weight: var(--fw-bold);
 }
 
+.welcome-intro--text {
+    padding: 0.5rem;
+    font-size: var(--fs-regular);
+}
+
+/*  */
 .HeaderLoginSetup {
     text-align: center;
     border-color: rgb(255, 0, 255);
@@ -56,8 +83,4 @@ html {
 
 .HeaderLoginText {
     padding: 0.5rem;
-}
-
-.HeaderContainer {
-    border: 2px solid red;
 }

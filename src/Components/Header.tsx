@@ -9,13 +9,8 @@ interface Props {
 
 const Header = (props: Props) => {
     return (
-        <div className="HeaderContainer">
-            <div className="Header">
-                <h3>Welcome to</h3>
-                <h1 className="HeaderTitle">Just Choose</h1>
-            </div>
-
-            <div className="UserProfile">
+        <div className="header-container">
+            <div className="header-user-profile">
                 <UserProfile
                     loggedInUser={props.loggedInUser}
                     setLoggedInUser={props.setLoggedInUser}

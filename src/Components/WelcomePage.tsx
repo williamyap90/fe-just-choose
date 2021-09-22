@@ -12,10 +12,11 @@ interface Props {
 
 const WelcomePage = (props: Props) => {
     return (
-        <div>
-            <div className="HeaderIntro">
-                <h4>Welcome Intro</h4>
-                <p className="HeaderWelcomeText">
+        <section>
+            <div className="welcome-intro">
+                <p className="welcome-intro--intro">Welcome to</p>
+                <h1 className="welcome-intro--header">Just Choose</h1>
+                <p className="welcome-intro--text">
                     Brief text about the app will be added here once the
                     inspiration hits to do so but for now this is a placeholder.
                 </p>
@@ -42,7 +43,7 @@ const WelcomePage = (props: Props) => {
                     </Link>
                 </div>
             )}
-        </div>
+        </section>
     );
 };
 
