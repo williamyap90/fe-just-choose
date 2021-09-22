@@ -10,6 +10,7 @@ import Results from './Results';
 import { IEvent, ISavedRestaurant, IVotes } from '../Interfaces/Interfaces';
 import TinderCard from 'react-tinder-card';
 import React from 'react';
+import WaitForResults from './WaitForResults';
 
 export default function VoterLandingPage() {
     const { eventName } = useParams<any>();
@@ -21,6 +22,9 @@ export default function VoterLandingPage() {
         useState<ISavedRestaurant>(); //displayrestaurant is the restaurant currently being voted on (ie on display)
 
     useEffect(() => {
+        if(localStorage.getItem(`hasVoted${eventName}`) ==='true') {
+            setHasVoted(true);
+        }
         setIsLoading(true);
         fetchEventById(eventName)
             .then((response: any) => {
@@ -51,17 +55,14 @@ export default function VoterLandingPage() {
                 //no restaurants left to vote on so patch the database with the votes and trigger the next conditional render
                 patchVotesByEventName(votes, event.eventName).then(() => {
                     //here is where we need to update local storage/cookies to tell it this user has already voted
+                    localStorage.setItem(`hasVoted${event.eventName}`, 'true')
                     //then hasvoted can be set to true next time they visit the page
                     setHasVoted(true);
                 });
             }
         }
     }, [votes]);
-    console.log(
-        'The current display restaurant:' + displayRestaurant?.restaurantName
-    );
-    console.log('The current votes state:');
-    console.log(votes);
+ 
 
     const updateVotes = (voteType: any, id: any, restaurantName: any) => {
         console.log('updating votes for ' + id + ' and ' + restaurantName);
@@ -158,6 +159,16 @@ export default function VoterLandingPage() {
     if (isLoading) return <Loading />;
 
     //this needs to be hasVoted OR deadline has passed.
+    let currTime = new Date();
+    let endTime;
+    if(event) {
+      endTime = new Date(event.endDate)
+      // console.log(endTime - currTime)
+      if(endTime < currTime) {
+          console.log('hmm')
+        return <Results />
+      }
+    }
     if (hasVoted) return <Results />;
 
     //else the voting page.... :
