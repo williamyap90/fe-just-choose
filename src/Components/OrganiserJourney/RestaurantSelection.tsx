@@ -104,7 +104,15 @@ export default function RestaurantSelection(props: Props) {
                                     }
                                 )}
                             </p>
-                            {restaurant.categories.some((category: any) => category.title === 'Vegan' || category.title === 'Vegetarian') && <p className={Paragraphs['veggie-icon']}><i className="fas fa-leaf"></i></p>}
+                            {restaurant.categories.some(
+                                (category: any) =>
+                                    category.title === 'Vegan' ||
+                                    category.title === 'Vegetarian'
+                            ) && (
+                                <p className={Paragraphs['veggie-icon']}>
+                                    <i className="fas fa-leaf"></i>
+                                </p>
+                            )}
                             <img
                                 className={Images['restaurant-info-picture']}
                                 src={restaurant.image_url}
@@ -169,7 +177,7 @@ export default function RestaurantSelection(props: Props) {
                                     (rest: any) => rest.id === restaurant.id
                                 ) &&
                                     `Shortlisted(${props.restaurantShortlist.length})`}{' '}
-                                <i className="far fa-thumbs-up"></i>
+                                <i className="fas fa-plus-square fa-2x"></i>
                             </p>
                         </div>
                     );

@@ -1,17 +1,18 @@
 .restaurant-info-title {
     text-align: center;
     font-size: 2rem;
-    color: purple;
+    color: var(--clr-dark);
 }
 
 .restaurant-info-subtitle {
     text-align: center;
-    font-size: 1.5rem;
-    color: purple;
+    font-size: 1.6rem;
+    margin-bottom: 0.5em;
+    color: var(--clr-primary);
 }
 .restaurant-info-additional {
-    font-size: 1.5rem;
-    color: purple;
+    font-size: 1.6rem;
+    color: var(--clr-dark);
     margin: 2.5%;
 }
 
@@ -30,9 +31,9 @@
 }
 
 .shortlist-info {
-    font-size: 1rem;
+    font-size: var(--fs-regular);
     text-align: center;
-    padding: 0.3rem;
+    padding: 1rem;
 }
 .shortlisted-restaurant-info {
     text-align: center;

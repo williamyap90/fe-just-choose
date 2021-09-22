@@ -61,8 +61,8 @@ export default function RestaurantFilters(props: Props) {
     };
 
     return (
-        <section className={Boxes['shortlist-filters-container']}>
-            <h1 className={Paragraphs['welcome-text']}>
+        <section className="filters">
+            <h1 className="page-header page-header-shortlist">
                 Welcome {props.loggedInUser?.name}
             </h1>
             <form className={Forms['filters-form']} onSubmit={handleSubmit}>
@@ -137,7 +137,7 @@ export default function RestaurantFilters(props: Props) {
                 </select>
 
                 <input
-                    className={Forms['filters-form-element']}
+                    className="primary-button-filters"
                     type="submit"
                     value="Find Restaurants"
                 />
