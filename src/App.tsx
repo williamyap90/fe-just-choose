@@ -9,6 +9,7 @@ import NotFound from './Components/NotFound';
 import { useState } from 'react';
 import { IUser } from './Components/Interfaces/Interfaces';
 import OrganiserLandingPage from './Components/OrganiserJourney/OrganiserLandingPage';
+import "react-datetime/css/react-datetime.css";
 
 function App() {
     const [loggedInUser, setLoggedInUser] = useState<IUser | null>(null);

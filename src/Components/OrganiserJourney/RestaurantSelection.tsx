@@ -104,7 +104,7 @@ export default function RestaurantSelection(props: Props) {
                                     }
                                 )}
                             </p>
-
+                            {restaurant.categories.some((category: any) => category.title === 'Vegan' || category.title === 'Vegetarian') && <p className={Paragraphs['veggie-icon']}><i className="fas fa-leaf"></i></p>}
                             <img
                                 className={Images['restaurant-info-picture']}
                                 src={restaurant.image_url}

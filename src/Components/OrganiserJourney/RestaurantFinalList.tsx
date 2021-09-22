@@ -1,9 +1,9 @@
 import Boxes from '../../CSS/Boxes.module.css';
 import Paragraphs from '../../CSS/Paragraphs.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { saveEvent } from '../../API-Funcs/API';
 import Datetime from 'react-datetime';
-import 'react-datetime/css/react-datetime.css';
+// import 'react-datetime/css/react-datetime.css';
 import { IUser, IYelpRestaurant } from '../Interfaces/Interfaces';
 import { extractRestaurantInfo } from '../../Utils/Utils';
 
@@ -18,14 +18,20 @@ interface Props {
     nameChosen: boolean;
     setNameChosen: (val: boolean) => void;
 }
+
 const RestaurantFinalList = (props: Props) => {
     type ClickEvent = React.MouseEvent<HTMLButtonElement>;
     type SubmitEvent = React.FormEvent<HTMLFormElement>;
     type InputEvent = React.ChangeEvent<HTMLInputElement>;
-
-    const [eventClosingDate, setEventClosingDate] = useState(
-        '2021-09-28T19:08:04.963Z'
-    );
+    const [eventClosingDate, setEventClosingDate] = useState<Date>();
+    const setEndTime = (time: any) => {
+        setEventClosingDate(time._d);
+    }
+    useEffect(() => {
+        let d = new Date();
+        d.setHours(d.getHours() + 3);
+        setEventClosingDate(d);
+    }, [])
     const [eventNameInput, setEventNameInput] = useState('');
     // const [nameChosen, setNameChosen] = useState(false); //used to toggle between name input form and displaying the chosen name
 
@@ -107,6 +113,8 @@ const RestaurantFinalList = (props: Props) => {
                         key={restaurant.id}
                         className={Boxes['shortlisted-restaurant-container']}
                     >
+                            {restaurant.categories.some((category: any) => category.title === 'Vegan' || category.title === 'Vegetarian') && <p className={Paragraphs['veggie-icon']}><i className="fas fa-leaf"></i></p>}
+
                         <p
                             className={
                                 Paragraphs['shortlisted-restaurant-info']
@@ -136,7 +144,8 @@ const RestaurantFinalList = (props: Props) => {
                 );
             })}
             <form>
-                <Datetime />;
+                <Datetime onChange={setEndTime}/>;
+           
             </form>
             <div>
                 <button onClick={() => props.setReviewingShortlist(false)}>
