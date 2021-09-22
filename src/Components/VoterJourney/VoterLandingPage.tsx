@@ -175,7 +175,7 @@ export default function VoterLandingPage() {
     return (
         <div>
             <p>You have been invited to vote at {event && event.eventName}</p>
-            <p>Swipe right to vote yes, swipe left to vote no</p>
+            <p>Swipe right to vote yes, swipe left to vote no</p> 
             <p>Voting will end at {event && event.endDate}</p>
             <div className={Boxes['voting-restaurant-display-container']}>
                 {event?.restaurantList.map((restaurant: any) => {
