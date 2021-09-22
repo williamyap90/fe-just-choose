@@ -1,7 +1,7 @@
 .restaurant-info-picture {
     width: 95%;
-    height: 300px;
+    height: 250px;
     margin: 0 auto;
     display: block;
+    border-radius: 0.5em;
 }
-

@@ -25,7 +25,12 @@ export default function ShortlistSubmission(props: Props) {
                 Select restaurants from the selection to add to your shortlist
             </p>
             {props.restaurantShortlist.length > 1 && (
-                <button onClick={handleClick}>Review List</button>
+                <button
+                    onClick={handleClick}
+                    className="primary-button-reviewlist"
+                >
+                    Review List
+                </button>
             )}
             <p className={Paragraphs['shortlist-info']}>
                 Restaurants shortlisted: {props.restaurantShortlist.length}

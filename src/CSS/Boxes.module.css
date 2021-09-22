@@ -5,9 +5,11 @@
 } */
 
 .restaurant-info-container {
-    max-width: 350px;
-    border-top: 2px solid black;
-    margin: auto;
+    max-width: 90%;
+    border-radius: 0.5em;
+    border: solid 1px var(--clr-light);
+    margin: 1.25em auto;
+    padding: 1em;
 }
 
 .shortlist-info-presubmission-container {
@@ -18,12 +20,20 @@
 }
 
 .pagination-container {
-    max-width: 350px;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    max-width: 90%;
     margin: auto;
+    font-size: var(--fs-regular);
+}
+.pagination-container > i {
+    margin: 0 0.5em;
+    color: var(--clr-dark);
 }
 
 .shortlisted-restaurant-container {
-    border: 2px solid black;
+    border: 1px solid var(--clr-light);
+    border-radius: 0.5em;
     max-width: 350px;
     margin: 1rem auto;
 }

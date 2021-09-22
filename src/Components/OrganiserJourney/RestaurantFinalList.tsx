@@ -26,12 +26,12 @@ const RestaurantFinalList = (props: Props) => {
     const [eventClosingDate, setEventClosingDate] = useState<Date>();
     const setEndTime = (time: any) => {
         setEventClosingDate(time._d);
-    }
+    };
     useEffect(() => {
         let d = new Date();
         d.setHours(d.getHours() + 3);
         setEventClosingDate(d);
-    }, [])
+    }, []);
     const [eventNameInput, setEventNameInput] = useState('');
     // const [nameChosen, setNameChosen] = useState(false); //used to toggle between name input form and displaying the chosen name
 
@@ -77,22 +77,30 @@ const RestaurantFinalList = (props: Props) => {
     };
     return (
         <section>
-            <p className={Paragraphs['summary-header']}>Shortlist</p>
+            <p className="page-header">Shortlist</p>
 
             {/* //enter name or display chosen name // */}
             {!props.nameChosen ? (
                 <>
-                    <label htmlFor="eventName">
+                    <label
+                        htmlFor="eventName"
+                        className="input-label-shortlist"
+                    >
                         Please choose a name for your event
                     </label>
                     <form onSubmit={handleSubmit}>
                         <input
+                            className="input-textbox-shortlist"
                             value={eventNameInput}
                             onChange={handleChange}
                             type="text"
                             placeholder="Enter Event Name"
                         ></input>
-                        <input type="submit" value="Set name..." />
+                        <input
+                            className="primary-button-reviewlist"
+                            type="submit"
+                            value="Set name..."
+                        />
                     </form>{' '}
                 </>
             ) : (
@@ -100,7 +108,10 @@ const RestaurantFinalList = (props: Props) => {
                     <p className={Paragraphs['summary-event-name']}>
                         {props.eventName}
                     </p>
-                    <button onClick={() => props.setNameChosen(false)}>
+                    <button
+                        className="primary-button-reviewlist"
+                        onClick={() => props.setNameChosen(false)}
+                    >
                         Edit Name
                     </button>
                 </>
@@ -113,7 +124,15 @@ const RestaurantFinalList = (props: Props) => {
                         key={restaurant.id}
                         className={Boxes['shortlisted-restaurant-container']}
                     >
-                            {restaurant.categories.some((category: any) => category.title === 'Vegan' || category.title === 'Vegetarian') && <p className={Paragraphs['veggie-icon']}><i className="fas fa-leaf"></i></p>}
+                        {restaurant.categories.some(
+                            (category: any) =>
+                                category.title === 'Vegan' ||
+                                category.title === 'Vegetarian'
+                        ) && (
+                            <p className={Paragraphs['veggie-icon']}>
+                                <i className="fas fa-leaf"></i>
+                            </p>
+                        )}
 
                         <p
                             className={
@@ -144,14 +163,19 @@ const RestaurantFinalList = (props: Props) => {
                 );
             })}
             <form>
-                <Datetime onChange={setEndTime}/>;
-           
+                <Datetime onChange={setEndTime} />;
             </form>
-            <div>
-                <button onClick={() => props.setReviewingShortlist(false)}>
+            <div className="final-list-buttons-container">
+                <button
+                    className="secondary-button-reviewlist"
+                    onClick={() => props.setReviewingShortlist(false)}
+                >
                     Add more restaurants
                 </button>
-                <button onClick={handleConfirmSelection}>
+                <button
+                    className="primary-button-reviewlist"
+                    onClick={handleConfirmSelection}
+                >
                     Confirm selection
                 </button>
             </div>

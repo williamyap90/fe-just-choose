@@ -257,3 +257,85 @@ html {
     color: var(--clr-primary);
     transition: all 0.1s ease-in-out;
 }
+.fa-plus-square {
+    color: var(--clr-primary);
+    height: 1em;
+    margin-right: 0.1em;
+}
+.fa-plus-square:active {
+    color: black;
+    height: 1em;
+    margin-right: 0.1em;
+}
+.primary-button-reviewlist {
+    margin-bottom: 0.25em;
+    align-self: center;
+    background-color: var(--clr-secondary);
+    border-radius: 0.5em;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    width: 70%;
+    height: 3em;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
+}
+.primary-button-reviewlist:hover {
+    background-color: transparent;
+    border-color: var(--clr-primary);
+    color: var(--clr-primary);
+    transition: all 0.1s ease-in-out;
+}
+
+/* Final shortlist */
+.input-label-shortlist {
+    text-align: left;
+    margin-bottom: -2em;
+    font-weight: var(--fw-bold);
+    font-size: 1.8em;
+    color: var(--clr-dark);
+}
+.input-textbox-shortlist {
+    margin: 1em 0;
+    font-size: var(--fs-regular);
+    align-self: center;
+    padding: 0.5em;
+    width: 90%;
+    height: 3.5em;
+    border-radius: 0.5em;
+    border: solid 1px var(--clr-light);
+}
+.input-textbox-shortlist:active {
+    border: solid 1px var(--clr-primary);
+}
+
+.final-list-buttons-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4em;
+    height: 20vh;
+    justify-content: space-evenly;
+}
+.secondary-button-reviewlist {
+    margin-bottom: 0.25em;
+    align-self: center;
+    background-color: var(--clr-primary);
+    border-radius: 0.5em;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    width: 70%;
+    height: 3em;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
+}
+.secondary-button-reviewlist:hover {
+    background-color: transparent;
+    border-color: var(--clr-primary);
+    color: var(--clr-primary);
+    transition: all 0.1s ease-in-out;
+}
