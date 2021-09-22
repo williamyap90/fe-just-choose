@@ -63,3 +63,8 @@
 .vote-yes-or-no-icons:hover {
     cursor: pointer;
 }
+
+.veggie-icon {
+    font-size: 2rem;
+    color: green;
+}
