@@ -25,10 +25,10 @@ html {
     --fs-header: 4.6rem;
 
     /* Colours */
-    --clr-primary: #6d036d;
-    --clr-secondary: #996199;
-    --clr-light: #fff;
-    --clr-dark: rgb(33, 33, 33);
+    --clr-primary: #44036d;
+    --clr-secondary: #a25bce;
+    --clr-light: rgb(198, 198, 198);
+    --clr-dark: rgb(58, 58, 58);
 }
 .App {
     margin: 0 0.5rem;
@@ -36,16 +36,12 @@ html {
 
 /* Header */
 .header-container {
-    border: 2px solid red;
     min-height: 8vh;
 }
 
 /* Welcome section */
 .welcome-intro {
     text-align: left;
-    border-color: blue;
-    border-width: 2px;
-    border-style: solid;
     min-height: 50vh;
     padding: 3em;
     margin-top: 0.5rem;
@@ -54,33 +50,210 @@ html {
 
 .welcome-intro--intro {
     font-weight: var(--fw-bold);
-    font-size: var(--fs-regular);
-    color: red;
+    font-size: 2.5rem;
+    margin: 1em 0;
 }
 .welcome-intro--header {
     color: var(--clr-primary);
     font-family: var(--ff-primary);
-    font-size: var(--fs-header);
-    font-weight: var(--fw-bold);
+    font-size: 5rem;
+    font-weight: 900;
 }
-
 .welcome-intro--text {
+    margin: 1em 0;
     padding: 0.5rem;
     font-size: var(--fs-regular);
 }
 
-/*  */
-.HeaderLoginSetup {
+/* User section */
+.welcome-intro--user {
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    border-color: rgb(255, 0, 255);
-    border-width: 2px;
-    border-style: solid;
     min-height: 15vh;
     padding: 0.25rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
+.welcome-intro--user-loggedin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 22vh;
+}
+.welcome-intro--divider {
+    align-self: center;
+    width: 50%;
+    height: 10px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    margin: 2em 0;
+    margin-bottom: 2.5em;
+}
+.welcome-intro--divider-text {
+    font-size: var(--fs-regular);
+    background-color: #ffffff;
+    padding: 0 10px;
+}
+.page-header-login {
+    margin-top: 1.5em;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+    height: 50vh;
+    justify-content: space-around;
+}
 
-.HeaderLoginText {
-    padding: 0.5rem;
+.primary-button {
+    background-color: var(--clr-primary);
+    border-radius: 3em;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+    width: 200px;
+    height: 3.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
+}
+.primary-button:hover {
+    background-color: transparent;
+    border-color: var(--clr-primary);
+    color: var(--clr-primary);
+    transition: all 0.1s ease-in-out;
+}
+.secondary-button {
+    background-color: var(--clr-secondary);
+    border-radius: 3em;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+    width: 200px;
+    height: 3.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
+}
+.secondary-button:hover {
+    background-color: transparent;
+    border-color: var(--clr-secondary);
+    color: var(--clr-secondary);
+    transition: all 0.1s ease-in-out;
+}
+/* Reusable components */
+.page-header {
+    font-size: var(--fs-header);
+    color: var(--clr-primary);
+    font-family: var(--ff-primary);
+    text-align: left;
+    margin-left: 0.5em;
+}
+.input-label {
+    text-align: left;
+    margin-bottom: -2em;
+    margin-left: 1.5em;
+    font-weight: var(--fw-bold);
+    font-size: 1.8em;
+    color: var(--clr-dark);
+}
+.input-textbox {
+    font-size: var(--fs-regular);
+    align-self: center;
+    padding: 0.5em;
+    width: 90%;
+    height: 4em;
+    border-radius: 0.5em;
+    border: solid 1px var(--clr-light);
+}
+.input-textbox:active {
+    border: solid 1px var(--clr-primary);
+}
+.login-form > button {
+    margin-top: 2em;
+    align-self: center;
+    width: 300px;
+}
+.footer-signup {
+    margin-top: 1em;
+    font-size: var(--fs-regular);
+    text-decoration: none;
+    color: var(--clr-dark);
+}
+.footer-signup > span {
+    font-size: var(--fs-regular);
+    color: var(--clr-secondary);
+    font-weight: var(--fw-bold);
+}
+
+/* User profile */
+.header-user-profile {
+    min-height: 10vh;
+}
+.user-container {
+    margin-top: 2em;
+    margin-right: 2em;
+    display: flex;
+    justify-content: flex-end;
+}
+.user-container > div {
+    font-size: var(--fs-regular);
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 1em;
+}
+.user-container > div > p {
+    color: var(--clr-dark);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.user-container > div > p > span {
+    color: var(--clr-secondary);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.user-container > div > div > p {
+    color: #8e8e8e;
+}
+.user-avatar {
+    height: 50px;
+    width: 50px;
+    border: 2px solid var(--clr-secondary);
+    border-radius: 50%;
+}
+
+/* Restaurant filters */
+.page-header-shortlist {
+    text-align: left;
+}
+.filters > form {
+    margin-top: 3em;
+}
+.primary-button-filters {
+    margin-top: 1.25em;
+    margin-bottom: 0.25em;
+    align-self: center;
+    background-color: var(--clr-primary);
+    border-radius: 0.5em;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+    width: 90%;
+    height: 3em;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
+}
+.primary-button-filters:hover {
+    background-color: transparent;
+    border-color: var(--clr-primary);
+    color: var(--clr-primary);
+    transition: all 0.1s ease-in-out;
 }

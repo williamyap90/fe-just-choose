@@ -24,22 +24,23 @@ const WelcomePage = (props: Props) => {
 
             {/* checks to see if user is logged in or not. Displays login buttons vs dashboard options accordingly */}
             {props.loggedInUser ? (
-                <div className="HeaderLoginSetup">
+                <div className="welcome-intro--user-loggedin">
                     <Link to="/Dashboard">
-                        <button>Create Event</button>
+                        <button className="primary-button">Create Event</button>
                     </Link>
-                    <button>View Profile</button>
+                    <button className="secondary-button">View Profile</button>
                 </div>
             ) : (
-                <div className="HeaderLoginSetup">
-                    <p className="HeaderLoginText">
-                        ------ Login or Signup -------
-                    </p>
+                <div className="welcome-intro--user">
                     <Link to="/login-page">
-                        <button>Login</button>
+                        <button className="primary-button">Login</button>
                     </Link>
+                    <div className="welcome-intro--divider">
+                        <span className="welcome-intro--divider-text">OR</span>
+                    </div>
+
                     <Link to="/signup-page">
-                        <button>Signup</button>
+                        <button className="secondary-button">Signup</button>
                     </Link>
                 </div>
             )}

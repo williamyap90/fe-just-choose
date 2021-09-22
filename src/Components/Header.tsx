@@ -9,14 +9,12 @@ interface Props {
 
 const Header = (props: Props) => {
     return (
-        <div className="header-container">
-            <div className="header-user-profile">
-                <UserProfile
-                    loggedInUser={props.loggedInUser}
-                    setLoggedInUser={props.setLoggedInUser}
-                    loggedUserAvatar={props.loggedUserAvatar}
-                />
-            </div>
+        <div className="header-user-profile">
+            <UserProfile
+                loggedInUser={props.loggedInUser}
+                setLoggedInUser={props.setLoggedInUser}
+                loggedUserAvatar={props.loggedUserAvatar}
+            />
         </div>
     );
 };
