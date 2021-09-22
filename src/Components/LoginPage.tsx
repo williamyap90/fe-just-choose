@@ -1,4 +1,3 @@
-import "../CSS/UserForm.css"
 
 const LoginPage = () => {
     return (
