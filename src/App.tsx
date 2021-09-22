@@ -1,5 +1,6 @@
 import Header from "./Components/Header"
 import "./CSS/App.css"
+import 'bulma/css/bulma.min.css'
 import { Route, Switch } from "react-router-dom";
 import WelcomePage from "./Components/WelcomePage";
 import SignUpPage from "./Components/SignUpPage"
@@ -16,7 +17,8 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState<IUser>({ name : 'SWAMmer', status : 'registered'});
 
   return (
-    <div className="App">
+    <div  className="App hero has-background-white">
+      <div className="container">
       <Header />
       <Switch>
       <Route exact path="/"> 
@@ -38,6 +40,7 @@ function App() {
         <NotFound />
       </Route>
       </Switch>
+      </div>
     </div>
   );
 }

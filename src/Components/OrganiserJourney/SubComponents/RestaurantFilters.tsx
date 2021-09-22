@@ -66,10 +66,10 @@ export default function RestaurantFilters(props: Props) {
     return (
         <section className={Boxes["shortlist-filters-container"]}>
         
-      <h1 className={Paragraphs["welcome-text"]}>Welcome {props.loggedInUser.name}</h1>
+      <h1 className={`is-size-1`}>Welcome {props.loggedInUser.name}</h1>
       <form className={Forms["filters-form"]} onSubmit={handleSubmit}>
         <label htmlFor="Location">
-          <p className={Paragraphs["form-label-paragraph"]}> Enter the postcode or name of the area where you wish to eat </p>
+          <p className={`${Paragraphs["form-label-paragraph"]} is-size-6 has-background-light is-rounded`}> Enter the postcode or name of the area where you wish to eat </p>
         </label>
         <input
           type="text"
@@ -77,12 +77,12 @@ export default function RestaurantFilters(props: Props) {
           id="location"
           value={props.filters.location}
           onChange={handleChange}
-          className={Forms["filters-form-element"]}
+          className={`${Forms["filters-form-element"]} input is-primary `}
         />
         <label htmlFor="Distance"> 
         <p className={Paragraphs["form-label-paragraph"]}> Choose a radius </p>
         </label>
-        <select className={Forms["filters-form-element"]} onChange={handleChange} name="Distance" id="Distance">
+        <select className={`${Forms["filters-form-element"]} input is-primary`} onChange={handleChange} name="Distance" id="Distance">
           <option value="1000"> 1km</option>
           <option value="2000"> 2km</option>
           <option value="3000"> 3km</option>
@@ -95,7 +95,7 @@ export default function RestaurantFilters(props: Props) {
         <label htmlFor="price">
         <p className={Paragraphs["form-label-paragraph"]}> Price range</p>
         </label>
-        <select className={Forms["filters-form-element"]} onChange={handleChange} name="price" id="price">
+        <select className={`${Forms["filters-form-element"]} input is-primary`} onChange={handleChange} name="price" id="price">
           <option value="1">£</option>
           <option value="2">££</option>
           <option value="3">£££</option>
@@ -105,13 +105,13 @@ export default function RestaurantFilters(props: Props) {
         <label htmlFor="sort_by">
         <p className={Paragraphs["form-label-paragraph"]}>Sort By</p>
         </label>
-        <select className={Forms["filters-form-element"]} onChange={handleChange} name="sort_by" id="sort_by">
+        <select className={`${Forms["filters-form-element"]} input is-primary`} onChange={handleChange} name="sort_by" id="sort_by">
           <option value="distance">Distance</option>
           <option value="rating">Rating</option>
           <option value="review_count">Review Count</option>
         </select>
 
-        <input className={Forms["filters-form-element"]} type="submit" value="Find Restaurants" />
+        <input className={`${Forms["filters-form-element"]} button is-primary`} type="submit" value="Find Restaurants" />
       </form>
       </section>
     )

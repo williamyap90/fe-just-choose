@@ -11,10 +11,11 @@ interface Props {
 }
 const WelcomePage = (props: Props) => {
   return (
-    <div>
+    <div className="">
       <div className="HeaderIntro">
-        <h4>Welcome Intro</h4>
-        <p className="HeaderWelcomeText">
+        <p className='subtitle'>
+          Welcome Intro
+          <br />
           Brief text about the app will be added here once the inspiration hits
           to do so but for now this is a placeholder.
         </p>
@@ -23,8 +24,8 @@ const WelcomePage = (props: Props) => {
         {/* checks to see if user is logged in or not. Displays login buttons vs dashboard options accordingly */}
       {props.loggedInUser ? (
         <div className="HeaderLoginSetup">
-         <Link to="/Dashboard">  <button>Create Event</button></Link>
-          <button>View Profile</button>
+         <Link to="/Dashboard">  <button className="button is-primary is-medium is-fullwidth mb-2">Create Event</button></Link>
+          <button className="button is-primary is-medium is-fullwidth">View Profile</button>
         </div>
       ) : (
         <div className="HeaderLoginSetup">
