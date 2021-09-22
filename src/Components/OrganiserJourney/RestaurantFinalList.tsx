@@ -15,6 +15,8 @@ interface Props {
     loggedInUser: IUser | null;
     eventName: string;
     setEventName: (val: string) => void;
+    nameChosen: boolean;
+    setNameChosen: (val: boolean) => void;
 }
 const RestaurantFinalList = (props: Props) => {
     type ClickEvent = React.MouseEvent<HTMLButtonElement>;
@@ -25,12 +27,12 @@ const RestaurantFinalList = (props: Props) => {
         '2021-09-28T19:08:04.963Z'
     );
     const [eventNameInput, setEventNameInput] = useState('');
-    const [nameChosen, setNameChosen] = useState(false); //used to toggle between name input form and displaying the chosen name
+    // const [nameChosen, setNameChosen] = useState(false); //used to toggle between name input form and displaying the chosen name
 
     const handleSubmit = (e: SubmitEvent) => {
         e.preventDefault();
         props.setEventName(eventNameInput);
-        setNameChosen(true);
+        props.setNameChosen(true);
     };
 
     const handleChange = (e: InputEvent) => {
@@ -72,7 +74,7 @@ const RestaurantFinalList = (props: Props) => {
             <p className={Paragraphs['summary-header']}>Shortlist</p>
 
             {/* //enter name or display chosen name // */}
-            {!nameChosen ? (
+            {!props.nameChosen ? (
                 <>
                     <label htmlFor="eventName">
                         Please choose a name for your event
@@ -92,7 +94,7 @@ const RestaurantFinalList = (props: Props) => {
                     <p className={Paragraphs['summary-event-name']}>
                         {props.eventName}
                     </p>
-                    <button onClick={() => setNameChosen(false)}>
+                    <button onClick={() => props.setNameChosen(false)}>
                         Edit Name
                     </button>
                 </>

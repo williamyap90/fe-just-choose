@@ -13,10 +13,13 @@ const OrganiserLandingPage = (props: Props) => {
     const [reviewingShortlist, setReviewingShortlist] = useState(false); //for conditional rendering of the shortlist review
     const [restaurantShortlist, setRestaurantShortlist] = useState([]); //restaurants organiser has added to shortlist
     const [eventName, setEventName] = useState('');
+    const [nameChosen, setNameChosen] = useState(false);
 
     if (reviewingShortlist)
         return (
             <RestaurantFinalList
+                nameChosen={nameChosen}
+                setNameChosen={setNameChosen}
                 eventName={eventName}
                 setEventName={setEventName}
                 loggedInUser={props.loggedInUser}
