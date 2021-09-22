@@ -24,10 +24,10 @@ export default function RestaurantSelection(props: Props) {
 
     const [filters, setFilters] = useState<IFilters>({
         location: "",
-        radius: null,
+        radius: '1000',
         limit: 10,
-        sort_by: null,
-        price: null,
+        sort_by: 'distance',
+        price: '1',
         offset: 0,
       });
 
