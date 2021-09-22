@@ -40,16 +40,21 @@ const LoginPage = (props: any) => {
     };
 
     return (
-        <section className="UserForm">
-            <h1>Log in</h1>
+        <section>
+            <h1 className="page-header page-header-login">Log in</h1>
             <form
+                className="login-form"
                 onSubmit={(event) => {
                     event.preventDefault();
                     submitForm();
                 }}
             >
-                <label htmlFor="email"> Email </label>
+                <label htmlFor="email" className="input-label">
+                    {' '}
+                    E-mail{' '}
+                </label>
                 <input
+                    className="input-textbox"
                     type="email"
                     name="email"
                     id="email"
@@ -57,20 +62,33 @@ const LoginPage = (props: any) => {
                     required
                     onChange={(event) => updateUserLogin(event)}
                 />
-                <label htmlFor="passwordField"> Password </label>
+
+                <label htmlFor="passwordField" className="input-label">
+                    {' '}
+                    Password{' '}
+                </label>
                 <input
+                    className="input-textbox"
                     type="password"
                     name="passwordField"
                     id="passwordField"
                     required
                     autoComplete="off"
                 />
-                <input type="submit" value="Login" />
-            </form>
 
+                <button
+                    className="secondary-button secondary-button-login"
+                    type="submit"
+                    value="Login"
+                >
+                    Login
+                </button>
+            </form>
             {/* Below Paragraph needs to be linked in Sign Up section */}
-            <Link to="/signup-page">
-                <p>Don't have an account? Sign Up</p>
+            <Link to="/signup-page" style={{ textDecoration: 'none' }}>
+                <p className="footer-signup">
+                    Don't have an account? <span>Sign Up</span>
+                </p>
             </Link>
         </section>
     );

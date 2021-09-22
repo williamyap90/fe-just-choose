@@ -6,16 +6,21 @@ const UserProfile = (props: any) => {
     return (
         <div>
             {props.loggedInUser ? (
-                <div>
-                    <p>Hello {props.loggedInUser.name}!</p>
-                    <div
-                        onClick={() => {
-                            handleClick();
-                        }}
-                    >
-                        <p>Sign out</p>
+                <div className="user-container">
+                    <div className="user-text">
+                        <p>
+                            Hello <span>{props.loggedInUser.name}</span>!
+                        </p>
+                        <div
+                            onClick={() => {
+                                handleClick();
+                            }}
+                        >
+                            <p>Sign out</p>
+                        </div>
                     </div>
                     <img
+                        className="user-avatar"
                         src={props.loggedUserAvatar}
                         alt={props.loggedInUser.name}
                     />

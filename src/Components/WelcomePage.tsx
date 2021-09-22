@@ -12,10 +12,11 @@ interface Props {
 
 const WelcomePage = (props: Props) => {
     return (
-        <div>
-            <div className="HeaderIntro">
-                <h4>Welcome Intro</h4>
-                <p className="HeaderWelcomeText">
+        <section>
+            <div className="welcome-intro">
+                <p className="welcome-intro--intro">Welcome to</p>
+                <h1 className="welcome-intro--header">Just Choose</h1>
+                <p className="welcome-intro--text">
                     Brief text about the app will be added here once the
                     inspiration hits to do so but for now this is a placeholder.
                 </p>
@@ -23,26 +24,27 @@ const WelcomePage = (props: Props) => {
 
             {/* checks to see if user is logged in or not. Displays login buttons vs dashboard options accordingly */}
             {props.loggedInUser ? (
-                <div className="HeaderLoginSetup">
+                <div className="welcome-intro--user-loggedin">
                     <Link to="/Dashboard">
-                        <button>Create Event</button>
+                        <button className="primary-button">Create Event</button>
                     </Link>
-                    <button>View Profile</button>
+                    <button className="secondary-button">View Profile</button>
                 </div>
             ) : (
-                <div className="HeaderLoginSetup">
-                    <p className="HeaderLoginText">
-                        ------ Login or Signup -------
-                    </p>
+                <div className="welcome-intro--user">
                     <Link to="/login-page">
-                        <button>Login</button>
+                        <button className="primary-button">Login</button>
                     </Link>
+                    <div className="welcome-intro--divider">
+                        <span className="welcome-intro--divider-text">OR</span>
+                    </div>
+
                     <Link to="/signup-page">
-                        <button>Signup</button>
+                        <button className="secondary-button">Signup</button>
                     </Link>
                 </div>
             )}
-        </div>
+        </section>
     );
 };
 

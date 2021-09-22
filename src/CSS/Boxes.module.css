@@ -1,28 +1,39 @@
-.shortlist-filters-container {
+/* .shortlist-filters-container {
     max-width: 350px;
     margin: auto;
-}
+    border: 1px solid red;
+} */
 
 .restaurant-info-container {
-    max-width: 350px;
-    border-top: 2px solid black;
-    margin: auto;
+    max-width: 90%;
+    border-radius: 0.5em;
+    border: solid 1px var(--clr-light);
+    margin: 1.25em auto;
+    padding: 1em;
 }
 
 .shortlist-info-presubmission-container {
-    max-width: 350px;
+    max-width: 90%;
+    border-radius: 0.5em;
     margin: 1rem auto;
-    border: 2px solid black;
-   
+    border: 2px solid var(--clr-primary);
 }
 
 .pagination-container {
-    max-width: 350px;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    max-width: 90%;
     margin: auto;
+    font-size: var(--fs-regular);
+}
+.pagination-container > i {
+    margin: 0 0.5em;
+    color: var(--clr-dark);
 }
 
 .shortlisted-restaurant-container {
-    border: 2px solid black;
+    border: 1px solid var(--clr-light);
+    border-radius: 0.5em;
     max-width: 350px;
     margin: 1rem auto;
 }
@@ -51,16 +62,22 @@
     width: 80vw;
     max-width: 260px;
     /* height: 300px; */
-    box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
+    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     background-size: cover;
     background-position: center;
 }
 
 .winning-restaurant-display-container {
-        -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0); 
-        box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0);
-        border: 2px solid black;
+    -webkit-box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
+        -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
+        12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
+        -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
+        -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
+        12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
+        -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    border: 2px solid black;
     max-width: 350px;
     margin: 2rem auto;
     height: 500px;
