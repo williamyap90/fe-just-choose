@@ -66,7 +66,7 @@ export default function VoterLandingPage() {
 
     const updateVotes = (voteType: any, id: any, restaurantName: any) => {
         console.log('updating votes for ' + id + ' and ' + restaurantName);
-        voteType = voteType === 'left' ? 'down' : 'up';
+        voteType = voteType === 'left' || voteType === 'down' ? 'down' : 'up';
         setVotes((currVotes: any) => {
             const newVotes = currVotes.map((vote: any) => {
                 return { ...vote };
@@ -82,35 +82,19 @@ export default function VoterLandingPage() {
 
     //adds the latest vote to the vote state. This then triggers the useffect which updates the next displayrestaurant state
     const handleClick = (voteType: any, id: any, restaurantName: any) => {
-        setVotes((currVotes: any) => {
-            const newVotes = currVotes.map((vote: any) => {
-                return { ...vote };
-            });
-            const voteObj: any = {};
-            voteObj.restaurantID = id;
-            voteObj.voteType = voteType;
-            voteObj.restaurantName = restaurantName;
-            newVotes.push(voteObj);
-            return newVotes;
-        });
-    };
-
-    const childRefs: any = useMemo(
-        () =>
-            Array(event.restaurantList?.length)
-                .fill(0)
-                .map((i) => React.createRef()),
-        []
-    );
-    console.log(childRefs);
-    const swipe = (dir: any, restaurantID: any, restaurantName: any) => {
-        const cardToBeRemovedIndex = event.restaurantList.findIndex(
-            (rest: any) => rest._id === restaurantID
-        );
-        console.log(cardToBeRemovedIndex);
-        childRefs[cardToBeRemovedIndex].current.swipe(dir);
-
-        updateVotes(dir, restaurantID, restaurantName);
+        console.log('clicked once')
+        // setVotes((currVotes: any) => {
+        //     const newVotes = currVotes.map((vote: any) => {
+        //         return { ...vote };
+        //     });
+        //     const voteObj: any = {};
+        //     voteObj.restaurantID = id;
+        //     voteObj.voteType = voteType;
+        //     voteObj.restaurantName = restaurantName;
+        //     newVotes.push(voteObj);
+        //     return newVotes;
+        // });
+        updateVotes(voteType, id, restaurantName)
         setEvent((currEvent: any) => {
             const newEvent = { ...currEvent };
             const newRestaurantList = [...currEvent.restaurantList];
@@ -118,14 +102,14 @@ export default function VoterLandingPage() {
             //find restaurant id in restaurant list
             //splice it out
             let restaurantToRemoveIndex = newRestaurantList.findIndex(
-                (rest) => rest._id === restaurantID
+                (rest) => rest.restaurantID === id
             );
-            console.log(restaurantToRemoveIndex);
             newRestaurantList.splice(restaurantToRemoveIndex, 1);
             newEvent.restaurantList = [...newRestaurantList];
             return newEvent;
         });
     };
+
     const swiped = (
         direction: any,
         restaurantid: string | undefined,
@@ -231,10 +215,8 @@ export default function VoterLandingPage() {
                                     onClick={() => {
                                         handleClick(
                                             'down',
-                                            displayRestaurant &&
-                                                displayRestaurant._id,
-                                            displayRestaurant &&
-                                                displayRestaurant.restaurantName
+                                                restaurant._id,
+                                                restaurant.restaurantName
                                         );
                                     }}
                                 >
@@ -251,10 +233,8 @@ export default function VoterLandingPage() {
                                     onClick={() => {
                                         handleClick(
                                             'up',
-                                            displayRestaurant &&
-                                                displayRestaurant._id,
-                                            displayRestaurant &&
-                                                displayRestaurant.restaurantName
+                                            restaurant._id,
+                                            restaurant.restaurantName
                                         );
                                     }}
                                 >
@@ -273,38 +253,7 @@ export default function VoterLandingPage() {
                     );
                 })}
             </div>
-            {/* <TinderCard onSwipe={(dir: any)=>  swiped(dir, displayRestaurant?._id, displayRestaurant?.restaurantName)} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}>
-        </TinderCard> */}
-            {/* //render the restaurant currently stored in displayRestaurant */}
-            {/* <div className={Boxes['voting-restaurant-display-container']}>
-            <p>{displayRestaurant && displayRestaurant.restaurantName}</p>
-            <p>
-                {displayRestaurant && displayRestaurant.categories.map((category: string) => {
-                return `- ${category} - `;
-            })}
-            </p>
-            <img className={Images['restaurant-info-picture']} src={displayRestaurant && displayRestaurant.imageUrl}></img>
-            <a href={displayRestaurant && displayRestaurant.url}>Restaurant Link</a>
-            <p>Rating: {displayRestaurant && displayRestaurant.rating}</p>
-            <div className={Boxes['vote-yes-or-no-container']}>
-                    <button onClick={() => {
-                        handleClick('down', displayRestaurant && displayRestaurant._id, displayRestaurant && displayRestaurant.restaurantName)
-                    }}         
-                        
-                    > <p className={Paragraphs['vote-yes-or-no-icons']}> 
-                        <i className="fas fa-times"></i>
-                        </p>
-                    </button>
-                    <button onClick={() => {
-                        handleClick('up', displayRestaurant && displayRestaurant._id, displayRestaurant && displayRestaurant.restaurantName)
-                    }}         
-                    >
-                    <p className={Paragraphs['vote-yes-or-no-icons']}> 
-                        <i className="fas fa-check"></i>
-                        </p>
-                    </button>
-            </div>
-        </div> */}
+            
         </div>
     );
 }
