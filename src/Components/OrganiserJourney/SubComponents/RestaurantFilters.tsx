@@ -23,7 +23,7 @@ export default function RestaurantFilters(props: Props) {
   type SelectEvent = React.ChangeEvent<HTMLSelectElement>;
   
     const handleChange = (e: SelectEvent | InputEvent) => {
-        props.setFilters((currFilters: any) => {
+        props.setFilters((currFilters: IFilters) => {
           const newFilters = { ...currFilters };
           switch (e.target.id) {
             case "Distance":
@@ -96,19 +96,11 @@ export default function RestaurantFilters(props: Props) {
         <p className={Paragraphs["form-label-paragraph"]}> Price range</p>
         </label>
         <select className={Forms["filters-form-element"]} onChange={handleChange} name="price" id="price">
-          <option value="1">$</option>
-          <option value="2">$$</option>
-          <option value="3">$$$</option>
-          <option value="4">$$$$</option>
+          <option value="1">£</option>
+          <option value="2">££</option>
+          <option value="3">£££</option>
+          <option value="4">££££</option>
         </select>
-
-        {/* <label htmlFor ="category">Category</label> 
-              <select name="category" id="category">
-                  <option value="afghani">Afghani</option>
-                  <option value="beergardens">beer garden</option>
-                  <option value="burgers">burgers</option>
-                  <option value="4">$$$$</option>
-              </select> */}
 
         <label htmlFor="sort_by">
         <p className={Paragraphs["form-label-paragraph"]}>Sort By</p>
