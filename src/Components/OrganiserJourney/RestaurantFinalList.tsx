@@ -65,19 +65,19 @@ const RestaurantFinalList = (props: Props) => {
     return (
         <section>
           
-            <p className={Paragraphs["summary-header"]}>Shortlist</p>
+            <p className={'has-text-weight-bold has-text-link-dark is-size-3'}>Summary</p>
 
             {/* //enter name or display chosen name // */}
             { !props.nameChosen ? <>
             <label htmlFor="eventName">Please choose a name for your event</label>
             <form onSubmit={handleSubmit}>
-                <input value={eventNameInput} onChange={handleChange} type="text" placeholder="Enter Event Name"></input>
-                <input type="submit" value="Set name..." />
+                <input value={eventNameInput} className="input is-primary" onChange={handleChange} type="text" placeholder="Enter Event Name"></input>
+                <input type="submit" value="Set name..." className="button is-primary" />
 
             </form> </>
             : <>
-            <p className={Paragraphs["summary-event-name"]}>{props.eventName}</p>
-            <button onClick={() => props.setNameChosen(false)}>Edit Name</button>
+            <p className={'has-text-weight-bold has-text-link-dark is-size-3'}>{props.eventName}</p>
+            <button className="button is-primary" onClick={() => props.setNameChosen(false)}>Edit Name</button>
             </>
             }
 
@@ -85,18 +85,23 @@ const RestaurantFinalList = (props: Props) => {
             {/* //display the short list// */}
             { props.restaurantShortlist.map((restaurant: any) => {
                 return (
-                    <div key={restaurant.id} className={Boxes["shortlisted-restaurant-container"]}>
-                        <p className={Paragraphs["shortlisted-restaurant-info"]}>
-                            {restaurant.name} - {restaurant.rating}
-                        </p>
-                        <p  onClick={() => {
+                    <div key={restaurant.id} className="card px-1 my-2 mx-2">
+                        <div className="card-content">
+                        <span className="is-size-6">
+                            {restaurant.name} - 
+                        </span>
+                        <span className="has-text-warning-dark">
+                        {restaurant.rating}
+                        </span>
+                        <span  onClick={() => {
                             props.setRestaurantShortlist((currShortlist: any) => {
                                 const newShortList = [...currShortlist];
                                 const index = newShortList.findIndex((rest: any) => rest.id === restaurant.id);
                                 newShortList.splice(index, 1);
                                 return newShortList;
                             })
-                        }} className={Paragraphs["delete-icon"]}><i className="fas fa-trash"></i></p>
+                        }} className={Paragraphs["delete-icon"]}><i className="fas fa-trash"></i></span>
+                        </div>
                     </div>
                 )
             })}
