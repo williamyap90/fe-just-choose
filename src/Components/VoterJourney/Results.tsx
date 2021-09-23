@@ -87,13 +87,15 @@ const Results = () => {
 
             <p>The winner is:</p>
             <div className={Boxes['winning-restaurant-display-container']}>
-                <p>{event && event.restaurantList[0].restaurantName}</p>
+                <p className="winner-title">
+                    - {event && event.restaurantList[0].restaurantName} -
+                </p>
 
-                <p>
+                <p className="winner-category">
                     {event &&
                         event.restaurantList[0].categories.map(
                             (category: string) => {
-                                return `- ${category} - `;
+                                return `${category} `;
                             }
                         )}
                 </p>

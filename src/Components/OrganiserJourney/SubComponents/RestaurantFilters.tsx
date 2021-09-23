@@ -42,9 +42,6 @@ export default function RestaurantFilters(props: Props) {
         e.preventDefault();
         getRestaurantsFromYelp();
         //jump to shortlisted restaurants
-        // document
-        //     .getElementById('shortlist-result')!
-        //     .scroll({ top: 500, left: 100, behavior: 'smooth' });
     };
 
     const getRestaurantsFromYelp = () => {

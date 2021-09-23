@@ -301,14 +301,15 @@ html {
     transition: all 0.1s ease-in-out;
 }
 .fa-plus-square {
+    box-sizing: border-box;
     color: var(--clr-primary);
     height: 1em;
-    margin-right: 0.1em;
+    /* padding-right: 0.5em;
+    margin-bottom: 0.5em; */
 }
 .fa-plus-square:active {
     color: black;
     height: 1em;
-    margin-right: 0.1em;
 }
 .primary-button-reviewlist {
     margin-top: 1em;
@@ -433,6 +434,11 @@ html {
 }
 
 .page-header-voting {
+    font-size: 4em;
+    color: var(--clr-primary);
+    font-family: var(--ff-primary);
+    text-align: left;
+    margin-left: 0.5em;
     margin-top: -1em;
 }
 
@@ -474,4 +480,41 @@ html {
     margin: 1em;
     margin-bottom: 1.5em;
     display: block;
+}
+.event-url {
+    font-weight: var(--fw-bold);
+    font-size: 2em !important;
+    margin-top: 2em;
+    padding: 1em;
+}
+.voting-card-title {
+    font-weight: var(--fw-bold);
+    color: black;
+    padding-top: 1em;
+    font-size: var(--fs-regular);
+}
+.voting-card-category {
+    padding-bottom: 1em;
+    color: black;
+}
+.yes-no-button {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    outline: none;
+}
+.voting-stars {
+    margin-bottom: 5em;
+    display: block;
+}
+.winner-title {
+    font-weight: var(--fw-bold);
+    color: black;
+    font-size: 2rem;
+}
+.winner-category {
+    margin-bottom: 1em;
 }

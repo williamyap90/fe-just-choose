@@ -167,7 +167,11 @@ const RestaurantFinalList = (props: Props) => {
                                 Paragraphs['shortlisted-restaurant-info']
                             }
                         >
-                            {restaurant.name} - {createStars(restaurant.rating)}
+                            {restaurant.name} -{' '}
+                            {(restaurant.distance / 1000).toFixed(2)}
+                            km
+                            <br />
+                            {createStars(restaurant.rating)}
                         </p>
                         <p
                             onClick={() => {

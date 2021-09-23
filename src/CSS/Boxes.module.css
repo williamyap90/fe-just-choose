@@ -5,11 +5,22 @@
 } */
 
 .restaurant-info-container {
-    max-width: 90%;
+    /* max-width: 90%;
     border-radius: 0.5em;
     border: solid 1px var(--clr-light);
     margin: 1.25em auto;
-    padding: 1em;
+    padding: 1em; */
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
+        0 0 0 1px rgb(10 10 10 / 2%);
+    color: #4a4a4a;
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 2.5em;
+    padding-right: 0.5em;
+    box-sizing: border-box;
+    margin-top: 2.5em;
 }
 
 .shortlist-info-presubmission-container {
@@ -58,9 +69,9 @@
 
 .card {
     position: relative;
-    background-color: #fff;
+    background-color: rgb(243, 243, 243);
     width: 300px;
-    height: 350px;
+    height: 390px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
         rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     border-radius: 0.5em;
@@ -68,28 +79,25 @@
     background-position: center;
     font-size: var(--fs-regular);
 }
-.card > .voting-card-title {
-    font-weight: var(--fw-bold);
-    color: red;
-}
 
 .winning-restaurant-display-container {
-    -webkit-box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
-        -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
-        12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
-        -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
-        -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
-        12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
-        -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    border: 2px solid black;
-    max-width: 350px;
-    margin: 2rem auto;
-    height: 500px;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
+        0 0 0 1px rgb(10 10 10 / 2%);
+    color: #4a4a4a;
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 2.5em;
+    padding-right: 0.5em;
+    box-sizing: border-box;
+    margin-top: 1.5em;
+    padding-bottom: 1.5em;
 }
 
 .vote-yes-or-no-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 1rem;
+    margin-bottom: 2rem;
 }

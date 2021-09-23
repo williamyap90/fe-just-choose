@@ -27,6 +27,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    padding: 0.5em;
 }
 .thumbs-up > i {
     margin-left: 0.25em;
@@ -51,14 +52,18 @@
     padding: 1rem;
 }
 .shortlisted-restaurant-info {
-    text-align: center;
-    font-size: 2rem;
+    /* text-align: left; */
+    font-size: var(--fs-regular);
+    margin-top: 1.5em;
+    line-height: 1.3em;
 }
-
 .delete-icon {
     font-size: 2rem;
-    color: purple;
+    /* padding: 1em; */
+    color: var(--clr-secondary);
     text-align: right;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .summary-header {
@@ -72,11 +77,18 @@
     color: var(--clr-dark);
 }
 
-.vote-yes-or-no-icons {
-    font-size: 3rem;
-    color: blue;
+.vote-yes-or-no-icons-yes {
+    font-size: 7rem;
+    cursor: pointer;
+    color: rgb(4, 167, 66);
 }
-
+.vote-yes-or-no-icons-no {
+    font-size: 7rem;
+    color: rgb(167, 37, 4);
+}
+.yes-no-button {
+    cursor: pointer;
+}
 .vote-yes-or-no-icons:hover {
     cursor: pointer;
 }

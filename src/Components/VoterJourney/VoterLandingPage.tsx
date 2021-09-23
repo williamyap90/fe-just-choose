@@ -24,7 +24,6 @@ export default function VoterLandingPage() {
         setIsLoading(true);
         fetchEventById(eventName)
             .then((response: any) => {
-                console.log(response.event);
                 setEvent(response.event[0]);
                 setNumOfRestaurants(response.event[0].restaurantList.length);
                 setIsLoading(false);
@@ -125,8 +124,6 @@ export default function VoterLandingPage() {
     if (hasVoted) return <Results />;
 
     const createStars = (rating: number) => {
-        console.log(rating, 'rating in createStars');
-        console.log(Math.floor(rating / 1));
         const fullStars = Math.floor(rating / 1);
         const halfStars = rating % 1;
 
@@ -151,16 +148,21 @@ export default function VoterLandingPage() {
             </div>
         );
     };
+    const fixDate = (date: any) => {
+        const fixedDate = new Date(date);
+        console.log(fixedDate);
 
+        return fixedDate.toString().split(' GMT')[0].slice(0, -3);
+    };
     //else the voting page.... :
     return (
         <div>
-            <h2 className="page-header page-header-voting">
+            <h2 className="page-header-voting">
                 You have been invited to vote at {event && event.eventName}
             </h2>
             <div className="voting-page-text">
                 <p>Swipe right to vote yes, swipe left to vote no</p>
-                <p>Voting will end at {event && event.endDate}</p>
+                <p>Voting will end at {event && fixDate(event.endDate)}</p>
             </div>
             <div className={Boxes['voting-restaurant-display-container']}>
                 {event?.restaurantList.map((restaurant: any) => {
@@ -198,7 +200,7 @@ export default function VoterLandingPage() {
                                         </p>
                                     )}
 
-                                    <p>
+                                    <p className="voting-card-category">
                                         {restaurant &&
                                             restaurant.categories.map(
                                                 (category: string) => {
@@ -216,7 +218,7 @@ export default function VoterLandingPage() {
                                     <a href={restaurant && restaurant.url}>
                                         Restaurant Link
                                     </a>
-                                    <p>
+                                    <p className="voting-stars">
                                         {restaurant &&
                                             createStars(restaurant.rating)}
                                     </p>
@@ -224,7 +226,8 @@ export default function VoterLandingPage() {
                             </TinderCard>
 
                             <div className={Boxes['vote-yes-or-no-container']}>
-                                <button
+                                <div
+                                    className="yes-no-button"
                                     onClick={() => {
                                         handleClick(
                                             'down',
@@ -235,13 +238,16 @@ export default function VoterLandingPage() {
                                 >
                                     <p
                                         className={
-                                            Paragraphs['vote-yes-or-no-icons']
+                                            Paragraphs[
+                                                'vote-yes-or-no-icons-no'
+                                            ]
                                         }
                                     >
-                                        <i className="fas fa-times"></i>
+                                        <i className="far fa-times-circle"></i>
                                     </p>
-                                </button>
-                                <button
+                                </div>
+                                <div
+                                    className="yes-no-button"
                                     onClick={() => {
                                         handleClick(
                                             'up',
@@ -252,12 +258,14 @@ export default function VoterLandingPage() {
                                 >
                                     <p
                                         className={
-                                            Paragraphs['vote-yes-or-no-icons']
+                                            Paragraphs[
+                                                'vote-yes-or-no-icons-yes'
+                                            ]
                                         }
                                     >
-                                        <i className="fas fa-check"></i>
+                                        <i className="far fa-check-circle"></i>
                                     </p>
-                                </button>
+                                </div>
                             </div>
                         </div>
                     );
