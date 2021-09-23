@@ -28,7 +28,9 @@ const WelcomePage = (props: Props) => {
                     <Link to="/Dashboard">
                         <button className="primary-button">Create Event</button>
                     </Link>
-                    <button className="secondary-button">View Profile</button>
+                    <Link to="/profile-page">
+                        <button className="secondary-button">View Profile</button>
+                    </Link>
                 </div>
             ) : (
                 <div className="welcome-intro--user">

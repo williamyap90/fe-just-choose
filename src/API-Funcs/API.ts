@@ -32,6 +32,11 @@ export const fetchEvent = async (eventName: string) => {
     return response.data;
 };
 
+export const fetchEventByOrganiser = async (organiser: string) => {
+    const response = await reviewsAPI.get(`/events/eventsbyorganiser/${organiser}`);
+    return response.data;
+};
+
 export const fetchEventById = async (eventID: string) => {
     const response = await reviewsAPI.get(`events/${eventID}`);
     return response.data;
