@@ -97,3 +97,15 @@
     font-size: 2rem;
     color: green;
 }
+.restaurant-info-title-events {
+    text-align: left;
+    font-size: 1.7rem;
+    padding-left: 1em;
+    color: var(--clr-dark);
+    line-height: 1.4em;
+}
+.restaurant-subtitle-event {
+    font-size: 1.6em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}

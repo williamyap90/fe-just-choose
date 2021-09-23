@@ -17,10 +17,11 @@
     color: #4a4a4a;
     max-width: 100%;
     position: relative;
-    margin-bottom: 2.5em;
+    margin-bottom: 3em;
     padding-right: 0.5em;
     box-sizing: border-box;
     margin-top: 2.5em;
+    padding-bottom: 2em;
 }
 
 .shortlist-info-presubmission-container {

@@ -518,3 +518,16 @@ html {
 .winner-category {
     margin-bottom: 1em;
 }
+.page-header-eventhistory {
+    margin-bottom: 0.5em;
+}
+.event-link {
+    color: var(--clr-secondary);
+    text-decoration: none;
+}
+.event-votes {
+    font-size: var(--fs-regular);
+}
+.page-event-history {
+    font-size: 2rem;
+}
