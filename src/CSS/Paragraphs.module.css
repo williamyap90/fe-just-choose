@@ -27,7 +27,11 @@
 }
 
 .form-label-paragraph {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-left: 1.5em;
+    margin-top: 1.15em;
+    font-weight: var(--fw-bold);
 }
 
 .shortlist-info {
