@@ -15,11 +15,22 @@
     color: var(--clr-dark);
     margin: 2.5%;
 }
+.restaurant-info-additional > a {
+    color: var(--clr-secondary);
+    text-decoration: none;
+}
 
 .thumbs-up {
-    font-size: 2rem;
+    font-size: var(--fs-regular);
     text-align: right;
     margin-bottom: 0.3rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.thumbs-up > i {
+    margin-left: 0.25em;
+    cursor: pointer;
 }
 
 .welcome-text {

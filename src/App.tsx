@@ -9,14 +9,14 @@ import NotFound from './Components/NotFound';
 import { useState } from 'react';
 import { IUser } from './Components/Interfaces/Interfaces';
 import OrganiserLandingPage from './Components/OrganiserJourney/OrganiserLandingPage';
-import "react-datetime/css/react-datetime.css";
+import 'react-datetime/css/react-datetime.css';
 
 function App() {
     const [loggedInUser, setLoggedInUser] = useState<IUser | null>(null);
     const [loggedUserAvatar, setLoggedUserAvatar] = useState('');
 
     return (
-        <div className="App">
+        <div className="App" id="App">
             <Header
                 loggedInUser={loggedInUser}
                 setLoggedInUser={setLoggedInUser}

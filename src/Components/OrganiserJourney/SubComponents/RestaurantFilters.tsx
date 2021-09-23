@@ -41,6 +41,10 @@ export default function RestaurantFilters(props: Props) {
     const handleSubmit = (e: SubmitEvent) => {
         e.preventDefault();
         getRestaurantsFromYelp();
+        //jump to shortlisted restaurants
+        // document
+        //     .getElementById('shortlist-result')!
+        //     .scroll({ top: 500, left: 100, behavior: 'smooth' });
     };
 
     const getRestaurantsFromYelp = () => {

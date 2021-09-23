@@ -150,7 +150,7 @@ export default function RestaurantSelection(props: Props) {
                                     Paragraphs['restaurant-info-additional']
                                 }
                             >
-                                Rating - {createStars(restaurant.rating)}
+                                {createStars(restaurant.rating)}
                             </p>
                             <p
                                 className={
@@ -196,7 +196,7 @@ export default function RestaurantSelection(props: Props) {
                                     color: props.restaurantShortlist.some(
                                         (rest: any) => rest.id === restaurant.id
                                     )
-                                        ? 'green'
+                                        ? '#44036d'
                                         : '',
                                 }}
                             >

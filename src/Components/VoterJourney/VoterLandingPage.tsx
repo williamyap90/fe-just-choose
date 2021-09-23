@@ -124,6 +124,34 @@ export default function VoterLandingPage() {
     }
     if (hasVoted) return <Results />;
 
+    const createStars = (rating: number) => {
+        console.log(rating, 'rating in createStars');
+        console.log(Math.floor(rating / 1));
+        const fullStars = Math.floor(rating / 1);
+        const halfStars = rating % 1;
+
+        const fullStarIcon = <i className="fas fa-star"></i>;
+        const halfStarIcon = <i className="fas fa-star-half-alt"></i>;
+        const emptyStarIcon = <i className="far fa-star"></i>;
+
+        let stars = [];
+
+        for (let i = 0; i < fullStars; i++) {
+            stars.push(fullStarIcon);
+        }
+
+        if (halfStars === 0.5) stars.push(halfStarIcon);
+        while (stars.length < 5) stars.push(emptyStarIcon);
+
+        return (
+            <div className="rating-star-container">
+                {stars.map((star) => {
+                    return star;
+                })}
+            </div>
+        );
+    };
+
     //else the voting page.... :
     return (
         <div>
@@ -189,8 +217,8 @@ export default function VoterLandingPage() {
                                         Restaurant Link
                                     </a>
                                     <p>
-                                        Rating:{' '}
-                                        {restaurant && restaurant.rating}
+                                        {restaurant &&
+                                            createStars(restaurant.rating)}
                                     </p>
                                 </div>
                             </TinderCard>

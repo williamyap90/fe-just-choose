@@ -75,16 +75,44 @@ const RestaurantFinalList = (props: Props) => {
             );
         }
     };
+    const createStars = (rating: number) => {
+        console.log(rating, 'rating in createStars');
+        console.log(Math.floor(rating / 1));
+        const fullStars = Math.floor(rating / 1);
+        const halfStars = rating % 1;
+
+        const fullStarIcon = <i className="fas fa-star"></i>;
+        const halfStarIcon = <i className="fas fa-star-half-alt"></i>;
+        const emptyStarIcon = <i className="far fa-star"></i>;
+
+        let stars = [];
+
+        for (let i = 0; i < fullStars; i++) {
+            stars.push(fullStarIcon);
+        }
+
+        if (halfStars === 0.5) stars.push(halfStarIcon);
+        while (stars.length < 5) stars.push(emptyStarIcon);
+
+        return (
+            <div className="rating-star-container">
+                {stars.map((star) => {
+                    return star;
+                })}
+            </div>
+        );
+    };
+
     return (
         <section>
-            <p className="page-header">Shortlist</p>
+            <p className="page-header page-header-shortlist">Shortlist</p>
 
             {/* //enter name or display chosen name // */}
             {!props.nameChosen ? (
                 <>
                     <label
                         htmlFor="eventName"
-                        className="input-label-shortlist"
+                        className="input-label-shortlist input-label-shortlist-choose"
                     >
                         Please choose a name for your event
                     </label>
@@ -139,7 +167,7 @@ const RestaurantFinalList = (props: Props) => {
                                 Paragraphs['shortlisted-restaurant-info']
                             }
                         >
-                            {restaurant.name} - {restaurant.rating}
+                            {restaurant.name} - {createStars(restaurant.rating)}
                         </p>
                         <p
                             onClick={() => {
@@ -163,7 +191,12 @@ const RestaurantFinalList = (props: Props) => {
                 );
             })}
             <form>
-                <Datetime onChange={setEndTime} />;
+                <p className="input-label"> Please add event vote deadline </p>
+                <Datetime
+                    className="final-list-datetime"
+                    onChange={setEndTime}
+                />
+                ;
             </form>
             <div className="final-list-buttons-container">
                 <button
