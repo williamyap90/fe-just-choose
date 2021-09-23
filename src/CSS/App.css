@@ -3,57 +3,31 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-html {
-  font-size: 62.5%;
-  text-align: center;
+.App{
+  max-width: 350px;
+    margin: auto;
+  display: flex;
+  flex-direction: column;
 }
-
-
-.Header {
-  text-align: center;
-  border-color: purple;
-  border-width: 2px;
-  border-style: solid;
-  min-height: 15vh;
-  padding: 0.25rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+/* bulma overrides */
+.has-text-link-dark{
+  color:#8422ff!important;
 }
-
-.HeaderTitle {
-  color: rgb(114, 31, 114);
+.button.is-primary{
+  background: #8422ff!important;
+  border-radius: 268.5px;
+  height: 48px;
+  margin-top:15px;
 }
-
-.HeaderIntro {
-  text-align: center;
-  border-color: blue;
-  border-width: 2px;
-  border-style: solid;
-  min-height: 15vh;
-  padding: 0.25rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+.is-primary.input, .is-primary.textarea{
+  border:1px solid #8422ff;
+  box-sizing: border-box;
+border-radius: 7px;
 }
-
-.HeaderWelcomeText {
-  padding: 0.5rem;
-}
-
-.HeaderLoginSetup {
-  text-align: center;
-  border-color: rgb(255, 0, 255);
-  border-width: 2px;
-  border-style: solid;
-  min-height: 15vh;
-  padding: 0.25rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.HeaderLoginText {
-  padding: 0.5rem;
-}
-.is-primary{
-  background:#8422ff
+.container{
+  display: flex;
+  flex-direction: column;
+  /* align-content: space-evenly; */
+  height: 100vh;
+  justify-content: space-evenly;
 }
