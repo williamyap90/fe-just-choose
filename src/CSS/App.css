@@ -252,6 +252,8 @@ html {
 /* Restaurant filters */
 .page-header-shortlist {
     text-align: left;
+    margin-top: 1.15em;
+    margin-bottom: -1em;
 }
 .filters > form {
     margin-top: 3em;

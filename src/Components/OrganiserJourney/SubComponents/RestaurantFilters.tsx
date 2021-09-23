@@ -62,15 +62,12 @@ export default function RestaurantFilters(props: Props) {
 
     return (
         <section className="filters">
-            <h1 className="page-header page-header-shortlist">
-                Welcome {props.loggedInUser?.name}
-            </h1>
+            <h1 className="page-header page-header-shortlist">Just Choose!</h1>
             <form className={Forms['filters-form']} onSubmit={handleSubmit}>
                 <label htmlFor="Location">
                     <p className={Paragraphs['form-label-paragraph']}>
                         {' '}
-                        Enter the postcode or name of the area where you wish to
-                        eat{' '}
+                        Enter a postcode or location name{' '}
                     </p>
                 </label>
                 <input
