@@ -1,4 +1,5 @@
 import Boxes from "../../../CSS/Boxes.module.css";
+import Utils from "../../../CSS/Utils.module.css"
 import Paragraphs from "../../../CSS/Paragraphs.module.css";
 import {  IYelpRestaurant } from "../../Interfaces/Interfaces";
 
@@ -21,11 +22,11 @@ export default function ShortlistSubmission(props: Props) {
     })
 
   return (
-    <section className={Boxes["shortlist-info-presubmission-container"]}>
+    <section className={`${Boxes["shortlist-info-presubmission-container"]} ${Utils["text-align-center"]}`}>
       <p className={Paragraphs["shortlist-info"]}>
         Restaurants shortlisted: {props.restaurantShortlist.length}
       </p>
-      <button onClick={handleClick}>Review List</button>
+      <button className="button is-primary mt-0" onClick={handleClick}>Review List</button>
       <p className={Paragraphs["shortlist-info"]}>
         Select restaurants from the selection to add to your shortlist
       </p>
