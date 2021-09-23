@@ -256,10 +256,15 @@ html {
 .user-container > div > div > p {
     color: #8e8e8e;
 }
+.user-text-signout:hover {
+    color: var(--clr-dark);
+    cursor: pointer;
+}
+
 .user-avatar {
     height: 50px;
     width: 50px;
-    border: 2px solid var(--clr-secondary);
+    border: 2px solid var(--clr-light);
     border-radius: 50%;
 }
 
