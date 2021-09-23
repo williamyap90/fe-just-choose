@@ -35,9 +35,11 @@ export default function EventConfirmation(props: Props) {
                 <p>Voting will end at: {event && event.endDate}</p>
                 <p>Here is your URL. </p>
                 <p>
-                    {window.location.href.slice(0, -10) +
+                   <a href={window.location.href.slice(0, -10) +
                         '/event/' +
-                        event?.eventName}
+                        event?.eventName}>{window.location.href.slice(0, -10) +
+                            '/event/' +
+                            event?.eventName}</a>
                 </p>
                 <p>Please share with your friends!</p>
             </div>

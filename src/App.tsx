@@ -10,6 +10,8 @@ import { useState } from 'react';
 import { IUser } from './Components/Interfaces/Interfaces';
 import OrganiserLandingPage from './Components/OrganiserJourney/OrganiserLandingPage';
 import "react-datetime/css/react-datetime.css";
+import UserProfile from './Components/UserProfile';
+import EventHistory from './Components/EventHistory';
 
 function App() {
     const [loggedInUser, setLoggedInUser] = useState<IUser | null>(null);
@@ -39,6 +41,11 @@ function App() {
                     <LoginPage
                         setLoggedInUser={setLoggedInUser}
                         setLoggedUserAvatar={setLoggedUserAvatar}
+                    />
+                </Route>
+                <Route exact path="/profile-page">
+                    <EventHistory
+                        loggedInUser={loggedInUser}
                     />
                 </Route>
                 <Route path="*">

@@ -2,13 +2,14 @@ const UserProfile = (props: any) => {
     const handleClick = () => {
         props.setLoggedInUser(null);
     };
-
+    console.log(props.loggedInUser)
     return (
         <div>
             {props.loggedInUser ? (
                 <div className="user-container">
                     <div className="user-text">
                         <p>
+                            
                             Hello <span>{props.loggedInUser.name}</span>!
                         </p>
                         <div

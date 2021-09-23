@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function WaitForResults() {
     return (
         <div>
@@ -8,6 +10,8 @@ export default function WaitForResults() {
                 Once the deadline has passed the results will be displayed here.
                 Try again later.
             </p>
+
+            <p className="page-header-voted-text">Want to make your own event? Log in or sign up <Link to="/login-page">here</Link></p>
         </div>
     );
 }
