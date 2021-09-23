@@ -53,3 +53,10 @@ export const fetchUserByEmail = async (userLogin: any) => {
     const response = await reviewsAPI.get(`/users/${userLogin.email}`);
     return response.data.user;
 };
+
+export const postUser = async (postBody: any) => {
+    console.log('Posting user with postBody:')
+    console.log(postBody)
+    const response = await reviewsAPI.post('/users', postBody);
+    return response.data.user;
+}
