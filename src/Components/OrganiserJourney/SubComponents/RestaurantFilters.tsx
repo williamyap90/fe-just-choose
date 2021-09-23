@@ -66,7 +66,7 @@ export default function RestaurantFilters(props: Props) {
     return (
         <section className={Boxes["shortlist-filters-container"]}>
         
-      <h1 className={`is-size-1`}>Welcome {props.loggedInUser.name}</h1>
+      <h1 className={`has-text-weight-bold has-text-link-dark is-size-3`}>Welcome {props.loggedInUser.name}</h1>
       <form className={Forms["filters-form"]} onSubmit={handleSubmit}>
         <label htmlFor="Location">
           <p className={`${Paragraphs["form-label-paragraph"]} is-size-6 has-background-light is-rounded`}> Enter the postcode or name of the area where you wish to eat </p>
