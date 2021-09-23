@@ -17,8 +17,8 @@ const WelcomePage = (props: Props) => {
                 <p className="welcome-intro--intro">Welcome to</p>
                 <h1 className="welcome-intro--header">Just Choose</h1>
                 <p className="welcome-intro--text">
-                    Brief text about the app will be added here once the
-                    inspiration hits to do so but for now this is a placeholder.
+                    Create an event, send it to your friends, let them do the
+                    hard work for you.
                 </p>
             </div>
 
@@ -29,7 +29,9 @@ const WelcomePage = (props: Props) => {
                         <button className="primary-button">Create Event</button>
                     </Link>
                     <Link to="/profile-page">
-                        <button className="secondary-button">View Profile</button>
+                        <button className="secondary-button">
+                            View Profile
+                        </button>
                     </Link>
                 </div>
             ) : (

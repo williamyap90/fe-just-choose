@@ -531,3 +531,14 @@ html {
 .page-event-history {
     font-size: 2rem;
 }
+.yelp-add-container {
+    display: flex;
+    justify-content: space-between;
+}
+.yelp-logo {
+    width: 50px; /*width of your image*/
+    height: 20px; /*height of your image*/
+    content: url(../images/yelp_logo.png);
+    margin-top: 1.2em;
+    margin-left: 2.5em;
+}
