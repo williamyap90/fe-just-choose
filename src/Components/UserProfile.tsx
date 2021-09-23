@@ -16,7 +16,7 @@ const UserProfile = (props: any) => {
                                 handleClick();
                             }}
                         >
-                            <p>Sign out</p>
+                            <p className="user-text-signout">Sign out</p>
                         </div>
                     </div>
                     <img

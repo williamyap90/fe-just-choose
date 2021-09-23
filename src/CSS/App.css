@@ -103,6 +103,20 @@ html {
 .page-header-signup {
     margin-top: 1em;
 }
+.page-header-confirmation {
+    margin-top: 1.5em;
+}
+
+.event-confirmation-text {
+    margin-top: 5em;
+}
+.event-confirmation-text > p {
+    font-size: var(--fs-regular);
+    margin-top: 0.5em;
+}
+.event-confirmation {
+    margin-top: 1em;
+}
 /* Login form */
 .login-form {
     display: flex;
@@ -242,10 +256,15 @@ html {
 .user-container > div > div > p {
     color: #8e8e8e;
 }
+.user-text-signout:hover {
+    color: var(--clr-dark);
+    cursor: pointer;
+}
+
 .user-avatar {
     height: 50px;
     width: 50px;
-    border: 2px solid var(--clr-secondary);
+    border: 2px solid var(--clr-light);
     border-radius: 50%;
 }
 
@@ -291,7 +310,7 @@ html {
     margin-right: 0.1em;
 }
 .primary-button-reviewlist {
-    margin-bottom: 0.25em;
+    margin-bottom: 1em;
     align-self: center;
     background-color: var(--clr-secondary);
     border-radius: 0.5em;
@@ -361,4 +380,31 @@ html {
     border-color: var(--clr-primary);
     color: var(--clr-primary);
     transition: all 0.1s ease-in-out;
+}
+
+/* Voting page text */
+.voting-page-text {
+    margin-top: 1.5em;
+    margin-bottom: 3em;
+}
+/* does not change voting card at all, find another way */
+.voting-page-text > p {
+    font-size: var(--fs-regular);
+    margin: 0.5em;
+}
+.page-header-voted {
+    margin-top: 2em;
+}
+.page-header-voted-text {
+    font-size: var(--fs-regular);
+    margin: 0.5em;
+    margin-top: 2em;
+    line-height: 2em;
+}
+
+/* Stars */
+.fa-star,
+.fa-star-half-alt,
+.fa-star {
+    color: rgb(224, 172, 0);
 }

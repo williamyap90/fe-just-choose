@@ -6,19 +6,19 @@ import Boxes from '../../CSS/Boxes.module.css';
 import Images from '../../CSS/Images.module.css';
 import Paragraphs from '../../CSS/Paragraphs.module.css';
 import Results from './Results';
-import {  ISavedRestaurant, IVotes } from '../Interfaces/Interfaces';
+import { ISavedRestaurant, IVotes } from '../Interfaces/Interfaces';
 import TinderCard from 'react-tinder-card';
 
 export default function VoterLandingPage() {
     const { eventName } = useParams<any>();
-    const [numOfRestaurants, setNumOfRestaurants] = useState(); 
+    const [numOfRestaurants, setNumOfRestaurants] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [event, setEvent] = useState<any>({});
     const [hasVoted, setHasVoted] = useState(false); //need to do some cookies stuff to set hasVoted or not depending on cookies.
     const [votes, setVotes] = useState<IVotes[] | []>([]); //an array of 'vote objects'. Object includes restaurant name, id and vote type.
 
     useEffect(() => {
-        if(localStorage.getItem(`hasVoted${eventName}`) ==='true') {
+        if (localStorage.getItem(`hasVoted${eventName}`) === 'true') {
             setHasVoted(true);
         }
         setIsLoading(true);
@@ -36,18 +36,17 @@ export default function VoterLandingPage() {
 
     useEffect(() => {
         //when 'votes' changes this effect replaces the 'displayRestaurant' with another from the event restaurant list. It picks one that hasnt been voted on yet (obviously)
-        if(!isLoading) {
-            if(votes.length === numOfRestaurants) {
+        if (!isLoading) {
+            if (votes.length === numOfRestaurants) {
                 patchVotesByEventName(votes, event.eventName).then(() => {
-                                //here is where we need to update local storage/cookies to tell it this user has already voted
-                                localStorage.setItem(`hasVoted${event.eventName}`, 'true')
-                                //then hasvoted can be set to true next time they visit the page
-                                setHasVoted(true);
-                            });
+                    //here is where we need to update local storage/cookies to tell it this user has already voted
+                    localStorage.setItem(`hasVoted${event.eventName}`, 'true');
+                    //then hasvoted can be set to true next time they visit the page
+                    setHasVoted(true);
+                });
             }
         }
     }, [votes]);
- 
 
     const updateVotes = (voteType: any, id: any, restaurantName: any) => {
         console.log('updating votes for ' + id + ' and ' + restaurantName);
@@ -67,7 +66,7 @@ export default function VoterLandingPage() {
 
     //adds the latest vote to the vote state. This then triggers the useffect which updates the next displayrestaurant state
     const handleClick = (voteType: any, id: any, restaurantName: any) => {
-        updateVotes(voteType, id, restaurantName)
+        updateVotes(voteType, id, restaurantName);
         setEvent((currEvent: any) => {
             const newEvent = { ...currEvent };
             const newRestaurantList = [...currEvent.restaurantList];
@@ -80,7 +79,7 @@ export default function VoterLandingPage() {
             newRestaurantList.splice(restaurantToRemoveIndex, 1);
             newEvent.restaurantList = [...newRestaurantList];
             return newEvent;
-        })
+        });
     };
 
     const swiped = (
@@ -116,21 +115,25 @@ export default function VoterLandingPage() {
 
     let currTime = new Date();
     let endTime;
-    if(event) {
-      endTime = new Date(event.endDate)
-      if(endTime < currTime) {
-          console.log('hmm')
-        return <Results />
-      }
+    if (event) {
+        endTime = new Date(event.endDate);
+        if (endTime < currTime) {
+            console.log('hmm');
+            return <Results />;
+        }
     }
     if (hasVoted) return <Results />;
 
     //else the voting page.... :
     return (
         <div>
-            <p>You have been invited to vote at {event && event.eventName}</p>
-            <p>Swipe right to vote yes, swipe left to vote no</p> 
-            <p>Voting will end at {event && event.endDate}</p>
+            <h2 className="page-header page-header-voting">
+                You have been invited to vote at {event && event.eventName}
+            </h2>
+            <div className="voting-page-text">
+                <p>Swipe right to vote yes, swipe left to vote no</p>
+                <p>Voting will end at {event && event.endDate}</p>
+            </div>
             <div className={Boxes['voting-restaurant-display-container']}>
                 {event?.restaurantList.map((restaurant: any) => {
                     return (
@@ -149,11 +152,23 @@ export default function VoterLandingPage() {
                                 preventSwipe={['right', 'left']}
                             >
                                 <div className={Boxes['card']}>
-                                    <p>
+                                    <p className="voting-card-title">
                                         {restaurant &&
                                             restaurant.restaurantName}
                                     </p>
-                            {restaurant.categories.some((category: any) => category === 'Vegan' || category === 'Vegetarian') && <p className={Paragraphs['veggie-icon']}><i className="fas fa-leaf"></i></p>}
+                                    {restaurant.categories.some(
+                                        (category: any) =>
+                                            category === 'Vegan' ||
+                                            category === 'Vegetarian'
+                                    ) && (
+                                        <p
+                                            className={
+                                                Paragraphs['veggie-icon']
+                                            }
+                                        >
+                                            <i className="fas fa-leaf"></i>
+                                        </p>
+                                    )}
 
                                     <p>
                                         {restaurant &&
@@ -185,8 +200,8 @@ export default function VoterLandingPage() {
                                     onClick={() => {
                                         handleClick(
                                             'down',
-                                                restaurant._id,
-                                                restaurant.restaurantName
+                                            restaurant._id,
+                                            restaurant.restaurantName
                                         );
                                     }}
                                 >
@@ -207,7 +222,6 @@ export default function VoterLandingPage() {
                                         );
                                     }}
                                 >
-
                                     <p
                                         className={
                                             Paragraphs['vote-yes-or-no-icons']
@@ -221,7 +235,6 @@ export default function VoterLandingPage() {
                     );
                 })}
             </div>
-            
         </div>
     );
 }
