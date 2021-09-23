@@ -4,24 +4,22 @@ import { isGetAccessorDeclaration } from 'typescript';
 import { postUser } from '../API-Funcs/API';
 import { useHistory } from 'react-router-dom';
 
-
 const SignUpPage = () => {
-
     const [formInput, setFormInput] = useState<any>({
-        firstName : '',
-        lastName : '',
-        email : '',
-        password : '',
-        confirmPassword : '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
     });
 
     const handleChange = (e: any) => {
         setFormInput((currFormInput: any) => {
-            const newFormInput = {...currFormInput};
+            const newFormInput = { ...currFormInput };
             newFormInput[e.target.id] = e.target.value;
             return newFormInput;
-        })
-    }
+        });
+    };
     const history = useHistory();
     const goLogin = () => {
         history.push('/login-page');
@@ -30,15 +28,21 @@ const SignUpPage = () => {
     const handleSubmit = (e: any) => {
         console.log('submitting');
         e.preventDefault();
-        if(formInput.firstName.length >= 2 && formInput.lastName.length >= 2 && formInput.email.length >= 4 && formInput.password.length >= 5 && formInput.password === formInput.confirmPassword ) {
-           console.log('Creating user....')
+        if (
+            formInput.firstName.length >= 2 &&
+            formInput.lastName.length >= 2 &&
+            formInput.email.length >= 4 &&
+            formInput.password.length >= 5 &&
+            formInput.password === formInput.confirmPassword
+        ) {
+            console.log('Creating user....');
             postUser(formInput).then((response) => {
                 goLogin();
             });
         } else {
-            console.log('Form not filled in properly')
+            console.log('Form not filled in properly');
         }
-    }
+    };
     console.log(formInput);
     return (
         <section className="UserForm">
@@ -56,7 +60,7 @@ const SignUpPage = () => {
                     onChange={handleChange}
                 />
                 <label className="input-label" htmlFor="lastName">
-                Last Name
+                    Last Name
                 </label>
                 <input
                     className="input-textbox"
@@ -90,7 +94,7 @@ const SignUpPage = () => {
                     value={formInput.password}
                     onChange={handleChange}
                 />
-                   <label className="input-label" htmlFor="confirmPassword">
+                <label className="input-label" htmlFor="confirmPassword">
                     {' '}
                     Confirm Password{' '}
                 </label>

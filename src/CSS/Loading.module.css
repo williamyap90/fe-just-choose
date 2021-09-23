@@ -4,6 +4,7 @@
     border: 16px solid var(--clr-primary);
     border-top: 16px solid rgb(188, 190, 188);
     margin: 10rem auto auto auto;
+    margin-bottom: 10rem;
     border-radius: 50%;
     -webkit-animation: loading 2s linear infinite;
     animation: loading 2s linear infinite;

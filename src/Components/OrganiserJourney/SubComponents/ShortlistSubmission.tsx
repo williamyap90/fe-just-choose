@@ -20,7 +20,10 @@ export default function ShortlistSubmission(props: Props) {
     };
 
     return (
-        <section className={Boxes['shortlist-info-presubmission-container']}>
+        <section
+            id="shortlist-result"
+            className={Boxes['shortlist-info-presubmission-container']}
+        >
             <p className={Paragraphs['shortlist-info']}>
                 Select restaurants from the selection to add to your shortlist
             </p>

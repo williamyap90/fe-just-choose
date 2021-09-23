@@ -101,7 +101,7 @@ html {
     margin-top: 1em;
 }
 .page-header-signup {
-    margin-top: 1em;
+    margin-top: -1em;
 }
 .page-header-confirmation {
     margin-top: 1.5em;
@@ -135,13 +135,14 @@ html {
     display: flex;
     flex-direction: column;
     margin-top: 2em;
-    height: 400px;
+    height: 500px;
     justify-content: space-around;
 }
 .signup-form > .secondary-button {
     margin-top: 2em;
     align-self: center;
     width: 300px;
+    height: 3.5em;
 }
 
 /* Button styles */
@@ -271,8 +272,8 @@ html {
 /* Restaurant filters */
 .page-header-shortlist {
     text-align: left;
-    margin-top: 1.15em;
-    margin-bottom: -1em;
+    margin-top: 1.5em;
+    margin-bottom: -0.75em;
 }
 .filters > form {
     margin-top: 3em;
@@ -300,19 +301,21 @@ html {
     transition: all 0.1s ease-in-out;
 }
 .fa-plus-square {
+    box-sizing: border-box;
     color: var(--clr-primary);
     height: 1em;
-    margin-right: 0.1em;
+    /* padding-right: 0.5em;
+    margin-bottom: 0.5em; */
 }
 .fa-plus-square:active {
     color: black;
     height: 1em;
-    margin-right: 0.1em;
 }
 .primary-button-reviewlist {
+    margin-top: 1em;
     margin-bottom: 1em;
     align-self: center;
-    background-color: var(--clr-secondary);
+    background-color: var(--clr-primary);
     border-radius: 0.5em;
     border: solid 1px transparent;
     color: #fff;
@@ -332,15 +335,22 @@ html {
 }
 
 /* Final shortlist */
+.page-header-shortlist {
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+}
 .input-label-shortlist {
     text-align: left;
-    margin-bottom: -2em;
-    font-weight: var(--fw-bold);
+    margin-left: -2.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
     font-size: 1.8em;
     color: var(--clr-dark);
+    font-weight: var(--fw-bold);
 }
 .input-textbox-shortlist {
-    margin: 1em 0;
+    margin-top: 0.5em;
+    margin-bottom: 1em 0;
     font-size: var(--fs-regular);
     align-self: center;
     padding: 0.5em;
@@ -351,19 +361,20 @@ html {
 }
 .input-textbox-shortlist:active {
     border: solid 1px var(--clr-primary);
+    outline: none;
 }
 
 .final-list-buttons-container {
     display: flex;
     flex-direction: column;
-    margin-top: 4em;
+    margin-top: 2.5em;
     height: 20vh;
     justify-content: space-evenly;
 }
 .secondary-button-reviewlist {
     margin-bottom: 0.25em;
     align-self: center;
-    background-color: var(--clr-primary);
+    background-color: var(--clr-secondary);
     border-radius: 0.5em;
     border: solid 1px transparent;
     color: #fff;
@@ -377,8 +388,8 @@ html {
 }
 .secondary-button-reviewlist:hover {
     background-color: transparent;
-    border-color: var(--clr-primary);
-    color: var(--clr-primary);
+    border-color: var(--clr-secondary);
+    color: var(--clr-secondary);
     transition: all 0.1s ease-in-out;
 }
 
@@ -407,4 +418,116 @@ html {
 .fa-star-half-alt,
 .fa-star {
     color: rgb(224, 172, 0);
+}
+
+.final-list-datetime > input {
+    margin-top: 0.5em;
+    margin-bottom: 1em 0;
+    font-size: var(--fs-regular);
+    align-self: center;
+    padding: 0.5em;
+    width: 90%;
+    height: 3.5em;
+    border-radius: 0.5em;
+    border: solid 1px var(--clr-light);
+    text-align: center;
+}
+
+.page-header-voting {
+    font-size: 4em;
+    color: var(--clr-primary);
+    font-family: var(--ff-primary);
+    text-align: left;
+    margin-left: 0.5em;
+    margin-top: -1em;
+}
+
+.Results > * {
+    font-size: var(--fs-regular);
+}
+.page-header-results {
+    text-align: center;
+    font-size: var(--fs-header);
+    color: var(--clr-primary);
+    font-family: var(--ff-primary);
+    margin-bottom: 0.5em;
+}
+.secondary-button-results {
+    margin-bottom: 1em;
+    align-self: center;
+    background-color: var(--clr-secondary);
+    border-radius: 1.5em;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 70%;
+    height: 2.5em;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
+}
+.secondary-button-results:hover {
+    background-color: transparent;
+    border-color: var(--clr-secondary);
+    color: var(--clr-secondary);
+    transition: all 0.1s ease-in-out;
+}
+
+.results-top {
+    text-decoration: none;
+    color: var(--clr-dark);
+    margin: 1em;
+    margin-bottom: 1.5em;
+    display: block;
+}
+.event-url {
+    font-weight: var(--fw-bold);
+    font-size: 2em !important;
+    margin-top: 2em;
+    padding: 1em;
+}
+.voting-card-title {
+    font-weight: var(--fw-bold);
+    color: black;
+    padding-top: 1em;
+    font-size: var(--fs-regular);
+}
+.voting-card-category {
+    padding-bottom: 1em;
+    color: black;
+}
+.yes-no-button {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    outline: none;
+}
+.voting-stars {
+    margin-bottom: 5em;
+    display: block;
+}
+.winner-title {
+    font-weight: var(--fw-bold);
+    color: black;
+    font-size: 2rem;
+}
+.winner-category {
+    margin-bottom: 1em;
+}
+.page-header-eventhistory {
+    margin-bottom: 0.5em;
+}
+.event-link {
+    color: var(--clr-secondary);
+    text-decoration: none;
+}
+.event-votes {
+    font-size: var(--fs-regular);
+}
+.page-event-history {
+    font-size: 2rem;
 }

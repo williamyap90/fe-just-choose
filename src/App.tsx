@@ -9,7 +9,7 @@ import NotFound from './Components/NotFound';
 import { useState } from 'react';
 import { IUser } from './Components/Interfaces/Interfaces';
 import OrganiserLandingPage from './Components/OrganiserJourney/OrganiserLandingPage';
-import "react-datetime/css/react-datetime.css";
+import 'react-datetime/css/react-datetime.css';
 import UserProfile from './Components/UserProfile';
 import EventHistory from './Components/EventHistory';
 
@@ -18,7 +18,7 @@ function App() {
     const [loggedUserAvatar, setLoggedUserAvatar] = useState('');
 
     return (
-        <div className="App">
+        <div className="App" id="App">
             <Header
                 loggedInUser={loggedInUser}
                 setLoggedInUser={setLoggedInUser}
@@ -44,9 +44,7 @@ function App() {
                     />
                 </Route>
                 <Route exact path="/profile-page">
-                    <EventHistory
-                        loggedInUser={loggedInUser}
-                    />
+                    <EventHistory loggedInUser={loggedInUser} />
                 </Route>
                 <Route path="*">
                     <NotFound />

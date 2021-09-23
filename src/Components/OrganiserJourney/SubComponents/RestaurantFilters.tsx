@@ -41,6 +41,7 @@ export default function RestaurantFilters(props: Props) {
     const handleSubmit = (e: SubmitEvent) => {
         e.preventDefault();
         getRestaurantsFromYelp();
+        //jump to shortlisted restaurants
     };
 
     const getRestaurantsFromYelp = () => {
