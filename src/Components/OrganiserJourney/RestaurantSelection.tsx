@@ -64,6 +64,34 @@ export default function RestaurantSelection(props: Props) {
         });
     };
 
+    const createStars = (rating: number) => {
+        console.log(rating, 'rating in createStars');
+        console.log(Math.floor(rating / 1));
+        const fullStars = Math.floor(rating / 1);
+        const halfStars = rating % 1;
+
+        const fullStarIcon = <i className="fas fa-star"></i>;
+        const halfStarIcon = <i className="fas fa-star-half-alt"></i>;
+        const emptyStarIcon = <i className="far fa-star"></i>;
+
+        let stars = [];
+
+        for (let i = 0; i < fullStars; i++) {
+            stars.push(fullStarIcon);
+        }
+
+        if (halfStars === 0.5) stars.push(halfStarIcon);
+        while (stars.length < 5) stars.push(emptyStarIcon);
+
+        return (
+            <div className="rating-star-container">
+                {stars.map((star) => {
+                    return star;
+                })}
+            </div>
+        );
+    };
+
     //renders filters components and the mini box that shows the current short list selection
     //then when finished loading renders the selection of restaurants from yelp
     return (
@@ -122,7 +150,7 @@ export default function RestaurantSelection(props: Props) {
                                     Paragraphs['restaurant-info-additional']
                                 }
                             >
-                                Rating - {restaurant.rating}
+                                Rating - {createStars(restaurant.rating)}
                             </p>
                             <p
                                 className={

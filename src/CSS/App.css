@@ -401,3 +401,10 @@ html {
     margin-top: 2em;
     line-height: 2em;
 }
+
+/* Stars */
+.fa-star,
+.fa-star-half-alt,
+.fa-star {
+    color: rgb(224, 172, 0);
+}
