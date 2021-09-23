@@ -26,7 +26,7 @@ html {
     --fs-header: 4.6rem;
 
     /* Colours */
-    --clr-primary: #44036d;
+    --clr-primary: #560b85;
     --clr-secondary: #a25bce;
     --clr-light: rgb(198, 198, 198);
     --clr-dark: rgb(58, 58, 58);
@@ -101,10 +101,11 @@ html {
     margin-top: 1em;
 }
 .page-header-signup {
-    margin-top: -1em;
+    margin-top: -0.15em;
 }
 .page-header-confirmation {
     margin-top: 1.5em;
+    margin-right: 0.5em;
 }
 
 .event-confirmation-text {
@@ -272,8 +273,8 @@ html {
 /* Restaurant filters */
 .page-header-shortlist {
     text-align: left;
-    margin-top: 1.5em;
-    margin-bottom: -0.75em;
+    margin-top: 2em;
+    margin-bottom: -0.25em;
 }
 .filters > form {
     margin-top: 3em;
@@ -336,8 +337,7 @@ html {
 
 /* Final shortlist */
 .page-header-shortlist {
-    margin-top: -0.5em;
-    margin-bottom: 0.5em;
+    margin-top: 0.5em;
 }
 .input-label-shortlist {
     text-align: left;

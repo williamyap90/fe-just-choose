@@ -21,6 +21,7 @@
     padding-right: 0.5em;
     box-sizing: border-box;
     margin-top: 2.5em;
+    padding-top: 2em;
     padding-bottom: 2em;
 }
 
@@ -72,13 +73,14 @@
     position: relative;
     background-color: rgb(243, 243, 243);
     width: 300px;
-    height: 390px;
+    height: 410px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
         rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     border-radius: 0.5em;
     background-size: cover;
     background-position: center;
     font-size: var(--fs-regular);
+    /* padding-bottom: 2em; */
 }
 
 .winning-restaurant-display-container {

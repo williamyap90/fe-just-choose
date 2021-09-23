@@ -171,7 +171,8 @@ export default function RestaurantSelection(props: Props) {
                                     Paragraphs['restaurant-info-additional']
                                 }
                             >
-                                Distance: {Math.floor(restaurant.distance)}m{' '}
+                                Distance:{' '}
+                                {Math.floor(restaurant.distance) / 100}km{' '}
                             </p>
                             <p
                                 className={
