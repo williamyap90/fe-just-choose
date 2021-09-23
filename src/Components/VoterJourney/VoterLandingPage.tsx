@@ -158,7 +158,8 @@ export default function VoterLandingPage() {
     return (
         <div>
             <h2 className="page-header-voting">
-                You have been invited to vote at {event && event.eventName}
+                You have been invited to vote at{' '}
+                <span>{event && event.eventName}</span>
             </h2>
             <div className="voting-page-text">
                 <p>Swipe right to vote yes, swipe left to vote no</p>

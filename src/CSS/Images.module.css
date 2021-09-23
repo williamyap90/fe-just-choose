@@ -5,4 +5,5 @@
     display: block;
     border-radius: 0.5em;
     margin-bottom: 0.75em;
+    object-fit: cover;
 }

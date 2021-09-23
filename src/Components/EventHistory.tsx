@@ -49,11 +49,17 @@ export default function EventHistory(props: any) {
             </div>
         );
     };
+    const fixDate = (date: any) => {
+        const fixedDate = new Date(date);
+        console.log(fixedDate);
+
+        return fixedDate.toString().split(' GMT')[0].slice(0, -3);
+    };
 
     return (
         <div>
             <h1 className="page-header page-header-eventhistory">
-                Hi {props.loggedInUser.name}
+                Your Profile
             </h1>
             <h2 className="page-event-history">Here is your event history:</h2>
             {eventHistory &&
@@ -75,7 +81,8 @@ export default function EventHistory(props: any) {
                                     Paragraphs['restaurant-info-title-events']
                                 }
                             >
-                                <strong>Event date:</strong> {event.endDate}{' '}
+                                <strong>Event date:</strong>{' '}
+                                {fixDate(event.endDate)}{' '}
                             </p>
 
                             <p

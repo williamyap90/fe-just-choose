@@ -171,7 +171,8 @@ export default function RestaurantSelection(props: Props) {
                                     Paragraphs['restaurant-info-additional']
                                 }
                             >
-                                Distance: {Math.floor(restaurant.distance)}m{' '}
+                                Distance:{' '}
+                                {Math.floor(restaurant.distance) / 100}km{' '}
                             </p>
                             <p
                                 className={
@@ -187,26 +188,30 @@ export default function RestaurantSelection(props: Props) {
                             >
                                 <a href={restaurant.url}>Website</a>{' '}
                             </p>
-                            <p
-                                onClick={() => {
-                                    handleClick(restaurant);
-                                }}
-                                className={Paragraphs['thumbs-up']}
-                                style={{
-                                    color: props.restaurantShortlist.some(
+                            <div className="yelp-add-container">
+                                <div className="yelp-logo"></div>
+                                <p
+                                    onClick={() => {
+                                        handleClick(restaurant);
+                                    }}
+                                    className={Paragraphs['thumbs-up']}
+                                    style={{
+                                        color: props.restaurantShortlist.some(
+                                            (rest: any) =>
+                                                rest.id === restaurant.id
+                                        )
+                                            ? '#44036d'
+                                            : '',
+                                    }}
+                                >
+                                    {' '}
+                                    {props.restaurantShortlist.some(
                                         (rest: any) => rest.id === restaurant.id
-                                    )
-                                        ? '#44036d'
-                                        : '',
-                                }}
-                            >
-                                {' '}
-                                {props.restaurantShortlist.some(
-                                    (rest: any) => rest.id === restaurant.id
-                                ) &&
-                                    `Shortlisted(${props.restaurantShortlist.length})`}{' '}
-                                <i className="fas fa-plus-square fa-2x"></i>
-                            </p>
+                                    ) &&
+                                        `Shortlisted(${props.restaurantShortlist.length})`}{' '}
+                                    <i className="fas fa-plus-square fa-2x"></i>
+                                </p>
+                            </div>
                         </div>
                     );
                 })

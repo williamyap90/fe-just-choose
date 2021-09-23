@@ -58,7 +58,7 @@ const LoginPage = (props: any) => {
                     type="email"
                     name="email"
                     id="email"
-                    // autoComplete="off" //
+                    autoComplete="off" //
                     required
                     onChange={(event) => updateUserLogin(event)}
                 />
