@@ -44,7 +44,7 @@ const RestaurantFinalList = (props: Props) => {
     const handleChange = (e: InputEvent) => {
         setEventNameInput(e.target.value);
     };
-
+    console.log(eventClosingDate);
     const handleConfirmSelection = (e: ClickEvent) => {
         e.preventDefault();
 

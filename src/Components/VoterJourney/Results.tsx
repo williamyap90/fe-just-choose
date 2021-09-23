@@ -6,6 +6,7 @@ import Boxes from "../../CSS/Boxes.module.css";
 import Images from "../../CSS/Images.module.css";
 import Paragraphs from "../../CSS/Paragraphs.module.css";
 import { IEvent, ISavedRestaurant } from "../Interfaces/Interfaces";
+import WaitForResults from "./WaitForResults";
 
 const Results = () => {
     const { eventName } = useParams<any>();
@@ -33,7 +34,23 @@ const Results = () => {
     if(isLoading)
         return <Loading />
 
-    //need conditional rendering that shows "thanks for voting now wait till deadline" page if time hasnt passed yet.
+    // conditional rendering checking enddate has passed or not
+    let currTime = new Date();
+    let endTime;
+    if(event) {
+      endTime = new Date(event.endDate)
+      console.log(endTime);
+      console.log(currTime);
+      console.log(endTime < currTime)
+      console.log(endTime > currTime)
+
+      // console.log(endTime - currTime)
+      if(endTime > currTime) {
+        return <WaitForResults />
+      }
+    }
+
+    
     //else return the results as per below
     return (
         <section className="Results">
