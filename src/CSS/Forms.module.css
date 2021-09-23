@@ -24,6 +24,10 @@
     border-radius: 0.5em;
     border: solid 1px var(--clr-light);
 }
+.filters-form-element:focus {
+    border: solid 1px var(--clr-secondary);
+    outline: none;
+}
 
 .pagination-button {
     background: none;
