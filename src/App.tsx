@@ -1,6 +1,6 @@
 import Header from "./Components/Header"
-import "./CSS/App.css"
 import 'bulma/css/bulma.min.css'
+import "./CSS/App.css"
 import { Route, Switch } from "react-router-dom";
 import WelcomePage from "./Components/WelcomePage";
 import SignUpPage from "./Components/SignUpPage"
@@ -17,7 +17,7 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState<IUser>({ name : 'SWAMmer', status : 'registered'});
 
   return (
-    <div  className="App hero has-background-white">
+    <div className="App hero has-background-white is-fullheight">
       <div className="container">
       <Header />
       <Switch>
