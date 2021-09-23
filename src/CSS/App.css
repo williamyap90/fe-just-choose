@@ -6,6 +6,7 @@
 }
 
 html {
+    width: 100%;
     font-size: 62.5%;
     text-align: center;
     font-family: var(--ff-secondary);
@@ -97,16 +98,39 @@ html {
     padding: 0 10px;
 }
 .page-header-login {
-    margin-top: 1.5em;
+    margin-top: 1em;
 }
+.page-header-signup {
+    margin-top: 1em;
+}
+/* Login form */
 .login-form {
     display: flex;
     flex-direction: column;
     margin-top: 5em;
-    height: 50vh;
+    height: 325px;
     justify-content: space-around;
 }
+.login-form > button {
+    margin-top: 2em;
+    align-self: center;
+    width: 300px;
+}
+/* Signup form */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    height: 400px;
+    justify-content: space-around;
+}
+.signup-form > .secondary-button {
+    margin-top: 2em;
+    align-self: center;
+    width: 300px;
+}
 
+/* Button styles */
 .primary-button {
     background-color: var(--clr-primary);
     border-radius: 3em;
@@ -155,7 +179,7 @@ html {
 }
 .input-label {
     text-align: left;
-    margin-bottom: -2em;
+    margin-top: 1em;
     margin-left: 1.5em;
     font-weight: var(--fw-bold);
     font-size: 1.8em;
@@ -170,14 +194,11 @@ html {
     border-radius: 0.5em;
     border: solid 1px var(--clr-light);
 }
-.input-textbox:active {
-    border: solid 1px var(--clr-primary);
+.input-textbox:focus {
+    border: solid 1px var(--clr-secondary);
+    outline: none;
 }
-.login-form > button {
-    margin-top: 2em;
-    align-self: center;
-    width: 300px;
-}
+
 .footer-signup {
     margin-top: 1em;
     font-size: var(--fs-regular);
