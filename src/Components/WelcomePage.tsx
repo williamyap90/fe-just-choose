@@ -12,7 +12,8 @@ interface Props {
 
 const WelcomePage = (props: Props) => {
     return (
-        <section>
+        <section className="welcome-section">
+            <div className="welcome-background">  </div>
             <div className="welcome-intro">
                 <p className="welcome-intro--intro">Welcome to</p>
                 <h1 className="welcome-intro--header">Just Choose</h1>
@@ -21,7 +22,6 @@ const WelcomePage = (props: Props) => {
                     hard work for you.
                 </p>
             </div>
-
             {/* checks to see if user is logged in or not. Displays login buttons vs dashboard options accordingly */}
             {props.loggedInUser ? (
                 <div className="welcome-intro--user-loggedin">
@@ -48,6 +48,9 @@ const WelcomePage = (props: Props) => {
                     </Link>
                 </div>
             )}
+        
+
+           
         </section>
     );
 };
