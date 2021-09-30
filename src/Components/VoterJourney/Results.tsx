@@ -41,19 +41,12 @@ const Results = () => {
     let endTime;
     if (event) {
         endTime = new Date(event.endDate);
-        console.log(endTime);
-        console.log(currTime);
-        console.log(endTime < currTime);
-        console.log(endTime > currTime);
 
-        // console.log(endTime - currTime)
         if (endTime > currTime) {
             return <WaitForResults />;
         }
     }
     const createStars = (rating: number) => {
-        console.log(rating, 'rating in createStars');
-        console.log(Math.floor(rating / 1));
         const fullStars = Math.floor(rating / 1);
         const halfStars = rating % 1;
 

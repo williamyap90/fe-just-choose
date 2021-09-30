@@ -4,12 +4,17 @@ import { IUser } from './Interfaces/Interfaces';
 import { fetchUserByEmail } from '../API-Funcs/API';
 
 const LoginPage = (props: any) => {
-    const [userLogin, setUserLogin] = useState({ email: '' });
+    const [userLogin, setUserLogin] = useState({ email: '', password: '' });
 
     const updateUserLogin = (event: any) => {
         setUserLogin((currUserLogin) => {
             const newUserLogin = { ...currUserLogin };
-            newUserLogin.email = event.target.value;
+            if (event.target.id === 'email') {
+                newUserLogin.email = event.target.value;
+            }
+            if (event.target.id === 'passwordField') {
+                newUserLogin.password = event.target.value;
+            }
             return newUserLogin;
         });
     };
@@ -22,6 +27,8 @@ const LoginPage = (props: any) => {
     const submitForm = () => {
         fetchUserByEmail(userLogin)
             .then((user) => {
+                localStorage.setItem(`username`, `${user.firstName}`);
+
                 props.setLoggedInUser((currUser: IUser) => {
                     const newLoggedInUser = { ...currUser };
                     newLoggedInUser.name = user.firstName;
@@ -35,7 +42,7 @@ const LoginPage = (props: any) => {
                 goHome();
             })
             .catch((err) => {
-                alert('User not found!');
+                alert('Username/password not found!');
             });
     };
 
@@ -74,6 +81,7 @@ const LoginPage = (props: any) => {
                     id="passwordField"
                     required
                     autoComplete="off"
+                    onChange={(event) => updateUserLogin(event)}
                 />
 
                 <button

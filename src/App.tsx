@@ -6,7 +6,7 @@ import SignUpPage from './Components/SignUpPage';
 import LoginPage from './Components/LoginPage';
 import VoterLandingPage from './Components/VoterJourney/VoterLandingPage';
 import NotFound from './Components/NotFound';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { IUser } from './Components/Interfaces/Interfaces';
 import OrganiserLandingPage from './Components/OrganiserJourney/OrganiserLandingPage';
 import 'react-datetime/css/react-datetime.css';
@@ -16,6 +16,18 @@ import EventHistory from './Components/EventHistory';
 function App() {
     const [loggedInUser, setLoggedInUser] = useState<IUser | null>(null);
     const [loggedUserAvatar, setLoggedUserAvatar] = useState('');
+
+    useEffect(() => {
+        const hasUsername = localStorage.getItem('username');
+        if (hasUsername) {
+            setLoggedInUser((currUser: any) => {
+                const newCurrUser = { ...currUser };
+                newCurrUser.name = hasUsername;
+                newCurrUser.status = 'registered';
+                return newCurrUser;
+            });
+        }
+    }, []);
 
     return (
         <div className="App" id="App">

@@ -7,7 +7,6 @@ import Paragraphs from '../CSS/Paragraphs.module.css';
 import { Link } from 'react-router-dom';
 
 export default function EventHistory(props: any) {
-    console.log(props.loggedInUser);
     const [eventHistory, setEventHistory] = useState<any>();
     const [isLoading, setIsLoading] = useState(false);
 
@@ -18,13 +17,10 @@ export default function EventHistory(props: any) {
             setIsLoading(false);
         });
     }, []);
-    if (eventHistory) console.log(eventHistory[0]);
 
     if (isLoading) return <Loading />;
 
     const createStars = (rating: number) => {
-        console.log(rating, 'rating in createStars');
-        console.log(Math.floor(rating / 1));
         const fullStars = Math.floor(rating / 1);
         const halfStars = rating % 1;
 
@@ -51,8 +47,6 @@ export default function EventHistory(props: any) {
     };
     const fixDate = (date: any) => {
         const fixedDate = new Date(date);
-        console.log(fixedDate);
-
         return fixedDate.toString().split(' GMT')[0].slice(0, -3);
     };
 

@@ -33,7 +33,9 @@ export const fetchEvent = async (eventName: string) => {
 };
 
 export const fetchEventByOrganiser = async (organiser: string) => {
-    const response = await reviewsAPI.get(`/events/eventsbyorganiser/${organiser}`);
+    const response = await reviewsAPI.get(
+        `/events/eventsbyorganiser/${organiser}`
+    );
     return response.data;
 };
 
@@ -55,13 +57,13 @@ export const patchVotesByEventName = async (
 };
 
 export const fetchUserByEmail = async (userLogin: any) => {
-    const response = await reviewsAPI.get(`/users/${userLogin.email}`);
+    const response = await reviewsAPI.post(`/users/${userLogin.email}`, {
+        password: userLogin.password,
+    });
     return response.data.user;
 };
 
 export const postUser = async (postBody: any) => {
-    console.log('Posting user with postBody:')
-    console.log(postBody)
     const response = await reviewsAPI.post('/users', postBody);
     return response.data.user;
-}
+};

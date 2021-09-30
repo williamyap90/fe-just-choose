@@ -48,7 +48,6 @@ export default function VoterLandingPage() {
     }, [votes]);
 
     const updateVotes = (voteType: any, id: any, restaurantName: any) => {
-        console.log('updating votes for ' + id + ' and ' + restaurantName);
         voteType = voteType === 'left' || voteType === 'down' ? 'down' : 'up';
         setVotes((currVotes: any) => {
             const newVotes = currVotes.map((vote: any) => {
@@ -86,8 +85,6 @@ export default function VoterLandingPage() {
         restaurantid: string | undefined,
         restaurantName: string | undefined
     ) => {
-        console.log('You swiped: ' + direction);
-
         updateVotes(direction, restaurantid, restaurantName);
         //remove from restaurantlist in event
         setEvent((currEvent: any) => {
@@ -106,10 +103,6 @@ export default function VoterLandingPage() {
         // }
     };
 
-    const onCardLeftScreen = (myIdentifier: any) => {
-        console.log(myIdentifier + ' left the screen');
-    };
-
     if (isLoading) return <Loading />;
 
     let currTime = new Date();
@@ -117,7 +110,6 @@ export default function VoterLandingPage() {
     if (event) {
         endTime = new Date(event.endDate);
         if (endTime < currTime) {
-            console.log('hmm');
             return <Results />;
         }
     }
@@ -150,7 +142,6 @@ export default function VoterLandingPage() {
     };
     const fixDate = (date: any) => {
         const fixedDate = new Date(date);
-        console.log(fixedDate);
 
         return fixedDate.toString().split(' GMT')[0].slice(0, -3);
     };
@@ -176,9 +167,6 @@ export default function VoterLandingPage() {
                                         restaurant?._id,
                                         restaurant?.restaurantName
                                     )
-                                }
-                                onCardLeftScreen={() =>
-                                    onCardLeftScreen('fooBar')
                                 }
                                 preventSwipe={['right', 'left']}
                             >
