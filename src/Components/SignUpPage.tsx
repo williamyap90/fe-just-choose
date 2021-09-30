@@ -26,7 +26,6 @@ const SignUpPage = () => {
     };
 
     const handleSubmit = (e: any) => {
-        console.log('submitting');
         e.preventDefault();
         if (
             formInput.firstName.length >= 2 &&
@@ -35,7 +34,6 @@ const SignUpPage = () => {
             formInput.password.length >= 5 &&
             formInput.password === formInput.confirmPassword
         ) {
-            console.log('Creating user....');
             postUser(formInput).then((response) => {
                 goLogin();
             });
@@ -43,7 +41,6 @@ const SignUpPage = () => {
             console.log('Form not filled in properly');
         }
     };
-    console.log(formInput);
     return (
         <section className="UserForm">
             <h1 className="page-header page-header-signup">Sign Up</h1>

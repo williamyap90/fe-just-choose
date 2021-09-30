@@ -44,7 +44,6 @@ const RestaurantFinalList = (props: Props) => {
     const handleChange = (e: InputEvent) => {
         setEventNameInput(e.target.value);
     };
-    console.log(eventClosingDate);
     const handleConfirmSelection = (e: ClickEvent) => {
         e.preventDefault();
 
@@ -76,8 +75,6 @@ const RestaurantFinalList = (props: Props) => {
         }
     };
     const createStars = (rating: number) => {
-        console.log(rating, 'rating in createStars');
-        console.log(Math.floor(rating / 1));
         const fullStars = Math.floor(rating / 1);
         const halfStars = rating % 1;
 

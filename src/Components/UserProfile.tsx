@@ -1,15 +1,24 @@
+import { useHistory } from 'react-router';
+
 const UserProfile = (props: any) => {
+    const history = useHistory();
+    const goHome = () => {
+        history.push('/');
+    };
+
     const handleClick = () => {
         props.setLoggedInUser(null);
+        localStorage.removeItem('username');
+        alert('Successfully signed out.');
+        goHome();
     };
-    console.log(props.loggedInUser)
+
     return (
         <div>
             {props.loggedInUser ? (
                 <div className="user-container">
                     <div className="user-text">
                         <p>
-                            
                             Hello <span>{props.loggedInUser.name}</span>!
                         </p>
                         <div

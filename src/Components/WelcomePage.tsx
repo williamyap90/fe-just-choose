@@ -13,7 +13,7 @@ interface Props {
 const WelcomePage = (props: Props) => {
     return (
         <section className="welcome-section">
-            <div className="welcome-background">  </div>
+            <div className="welcome-background"> </div>
             <div className="welcome-intro">
                 <p className="welcome-intro--intro">Welcome to</p>
                 <h1 className="welcome-intro--header">Just Choose</h1>
@@ -39,8 +39,10 @@ const WelcomePage = (props: Props) => {
                     <Link to="/login-page">
                         <button className="primary-button">Login</button>
                     </Link>
-                    <div className="welcome-intro--divider">
+                    <div className="welcome-intro--divider-container">
+                        <div className="welcome-intro--divider"></div>
                         <span className="welcome-intro--divider-text">OR</span>
+                        <div className="welcome-intro--divider"></div>
                     </div>
 
                     <Link to="/signup-page">
@@ -48,9 +50,6 @@ const WelcomePage = (props: Props) => {
                     </Link>
                 </div>
             )}
-        
-
-           
         </section>
     );
 };

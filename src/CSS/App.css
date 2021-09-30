@@ -1,575 +1,631 @@
 @import url('https://fonts.googleapis.com/css2?family=Monda&family=Slabo+13px&display=swap');
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 html {
-  width: 100%;
-  font-size: 62.5%;
-  text-align: center;
-  font-family: var(--ff-secondary);
+    width: 100%;
+    font-size: 62.5%;
+    text-align: center;
+    font-family: var(--ff-secondary);
 }
 
 :root {
-  /* Fonts */
-  --ff-primary: sans-serif;
-  --ff-secondary: 'Monda', sans-serif;
+    /* Fonts */
+    --ff-primary: sans-serif;
+    --ff-secondary: 'Monda', sans-serif;
 
-  /* Font weights */
-  --fw-regular: 400;
-  --fw-bold: 800;
+    /* Font weights */
+    --fw-regular: 400;
+    --fw-bold: 800;
 
-  /* Font size */
-  --fs-regular: 1.6rem;
-  --fs-header: 4.6rem;
+    /* Font size */
+    --fs-regular: 1.6rem;
+    --fs-header: 4.6rem;
 
-  /* Colours */
-  --clr-primary: #560b85;
-  --clr-secondary: #a25bce;
-  --clr-light: rgb(198, 198, 198);
-  --clr-dark: rgb(58, 58, 58);
+    /* Colours */
+    --clr-primary: #560b85;
+    --clr-secondary: #a25bce;
+    --clr-light: rgb(198, 198, 198);
+    --clr-dark: rgb(58, 58, 58);
 }
 .App {
-  margin: 0 0.5rem;
+    margin: 0 0.5rem;
 }
 
 /* Header */
 .header-container {
-  min-height: 8vh;
+    min-height: 8vh;
 }
 
 /* Welcome section */
 .welcome-intro {
-  text-align: left;
-  min-height: 50vh;
-  padding: 3em;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+    text-align: left;
+    min-height: 50vh;
+    padding: 3em;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .welcome-intro--intro {
-  font-weight: var(--fw-bold);
-  font-size: 2.5rem;
-  margin: 1em 0;
+    font-weight: var(--fw-bold);
+    font-size: 2.5rem;
+    margin: 1em 0;
 }
 .welcome-intro--header {
-  color: var(--clr-primary);
-  font-family: var(--ff-primary);
-  font-size: 5rem;
-  font-weight: 900;
+    color: var(--clr-primary);
+    font-family: var(--ff-primary);
+    font-size: 5rem;
+    font-weight: 900;
 }
 .welcome-intro--text {
-  margin: 1em 0;
-  padding: 0.5rem;
-  font-size: var(--fs-regular);
+    margin: 1em 0;
+    padding: 0.5rem;
+    font-size: var(--fs-regular);
 }
 
 /* User section */
 .welcome-intro--user {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  min-height: 15vh;
-  padding: 0.25rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-height: 15vh;
+    padding: 0.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 .welcome-intro--user-loggedin {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  min-height: 22vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 22vh;
+}
+.welcome-intro--divider-container {
+    display: flex;
+    justify-content: center;
 }
 .welcome-intro--divider {
-  align-self: center;
-  width: 50%;
-  height: 10px;
-  border-bottom: 1px solid black;
-  text-align: center;
-  margin: 2em 0;
-  margin-bottom: 2.5em;
+    align-self: center;
+    width: 8em;
+    height: 10px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    margin: 2em 0;
+    margin-bottom: 2.5em;
 }
 .welcome-intro--divider-text {
-  font-size: var(--fs-regular);
-  background-color: #ffffff;
-  padding: 0 10px;
+    align-self: center;
+    font-size: var(--fs-regular);
+    background-color: #f6f1f500;
+    padding: 0 1.5em;
+    margin-top: 0.25em;
+    font-weight: var(--fw-bold);
 }
 .page-header-login {
-  margin-top: 1em;
+    margin-top: 1em;
 }
 .page-header-signup {
-  margin-top: -0.15em;
+    margin-top: -0.15em;
 }
 .page-header-confirmation {
-  margin-top: 1.5em;
-  margin-right: 0.5em;
+    margin-top: 1.5em;
+    margin-right: 0.5em;
 }
 
 .event-confirmation-text {
-  margin-top: 5em;
+    margin-top: 5em;
 }
 .event-confirmation-text > p {
-  font-size: var(--fs-regular);
-  margin-top: 0.5em;
+    font-size: var(--fs-regular);
+    margin-top: 0.5em;
 }
 .event-confirmation {
-  margin-top: 1em;
+    margin-top: 1em;
 }
 /* Login form */
 .login-form {
-  display: flex;
-  flex-direction: column;
-  margin-top: 5em;
-  height: 325px;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+    height: 325px;
+    justify-content: space-around;
 }
 .login-form > button {
-  margin-top: 2em;
-  align-self: center;
-  width: 300px;
+    margin-top: 2em;
+    align-self: center;
+    width: 300px;
 }
 /* Signup form */
 .signup-form {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2em;
-  height: 500px;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    height: 500px;
+    justify-content: space-around;
 }
 .signup-form > .secondary-button {
-  margin-top: 2em;
-  align-self: center;
-  width: 300px;
-  height: 3.5em;
+    margin-top: 2em;
+    align-self: center;
+    width: 300px;
+    height: 3.5em;
 }
 
 /* Button styles */
 .primary-button {
-  background-color: var(--clr-primary);
-  border-radius: 3em;
-  border: solid 1px transparent;
-  color: #fff;
-  font-size: 1.8em;
-  cursor: pointer;
-  width: 200px;
-  height: 3.5em;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: all 0.1s ease-in-out;
+    background-color: var(--clr-primary);
+    border-radius: 3em;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+    width: 200px;
+    height: 3.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
 }
 .primary-button:hover {
-  background-color: transparent;
-  border-color: var(--clr-primary);
-  color: var(--clr-primary);
-  transition: all 0.1s ease-in-out;
+    background-color: transparent;
+    border-color: var(--clr-primary);
+    color: var(--clr-primary);
+    transition: all 0.1s ease-in-out;
 }
 .secondary-button {
-  background-color: var(--clr-secondary);
-  border-radius: 3em;
-  border: solid 1px transparent;
-  color: #fff;
-  font-size: 1.8em;
-  cursor: pointer;
-  width: 200px;
-  height: 3.5em;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: all 0.1s ease-in-out;
+    background-color: var(--clr-secondary);
+    border-radius: 3em;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+    width: 200px;
+    height: 3.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
 }
 .secondary-button:hover {
-  background-color: transparent;
-  border-color: var(--clr-secondary);
-  color: var(--clr-secondary);
-  transition: all 0.1s ease-in-out;
+    background-color: transparent;
+    border-color: var(--clr-secondary);
+    color: var(--clr-secondary);
+    transition: all 0.1s ease-in-out;
 }
 /* Reusable components */
 .page-header {
-  font-size: var(--fs-header);
-  color: var(--clr-primary);
-  font-family: var(--ff-primary);
-  text-align: left;
-  margin-left: 0.5em;
+    font-size: var(--fs-header);
+    color: var(--clr-primary);
+    font-family: var(--ff-primary);
+    text-align: left;
+    margin-left: 0.5em;
 }
 .input-label {
-  text-align: left;
-  margin-top: 1em;
-  margin-left: 1.5em;
-  font-weight: var(--fw-bold);
-  font-size: 1.8em;
-  color: var(--clr-dark);
+    text-align: left;
+    margin-top: 1em;
+    margin-left: 1.5em;
+    font-weight: var(--fw-bold);
+    font-size: 1.8em;
+    color: var(--clr-dark);
 }
 .input-textbox {
-  font-size: var(--fs-regular);
-  align-self: center;
-  padding: 0.5em;
-  width: 90%;
-  height: 4em;
-  border-radius: 0.5em;
-  border: solid 1px var(--clr-light);
+    font-size: var(--fs-regular);
+    align-self: center;
+    padding: 0.5em;
+    width: 90%;
+    height: 4em;
+    border-radius: 0.5em;
+    border: solid 1px var(--clr-light);
 }
 .input-textbox:focus {
-  border: solid 1px var(--clr-secondary);
-  outline: none;
+    border: solid 1px var(--clr-secondary);
+    outline: none;
 }
 
 .footer-signup {
-  margin-top: 1em;
-  font-size: var(--fs-regular);
-  text-decoration: none;
-  color: var(--clr-dark);
+    margin-top: 1em;
+    font-size: var(--fs-regular);
+    text-decoration: none;
+    color: var(--clr-dark);
 }
 .footer-signup > span {
-  font-size: var(--fs-regular);
-  color: var(--clr-secondary);
-  font-weight: var(--fw-bold);
+    font-size: var(--fs-regular);
+    color: var(--clr-secondary);
+    font-weight: var(--fw-bold);
 }
 
 /* User profile */
 .header-user-profile {
-  min-height: 10vh;
+    min-height: 10vh;
 }
 .user-container {
-  margin-top: 2em;
-  margin-right: 2em;
-  display: flex;
-  justify-content: flex-end;
+    margin-top: 2em;
+    margin-right: 2em;
+    display: flex;
+    justify-content: flex-end;
 }
 .user-container > div {
-  font-size: var(--fs-regular);
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-right: 1em;
+    font-size: var(--fs-regular);
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 1em;
 }
 .user-container > div > p {
-  color: var(--clr-dark);
-  font-size: 1.8rem;
-  font-weight: 600;
+    color: var(--clr-dark);
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 .user-container > div > p > span {
-  color: var(--clr-secondary);
-  font-size: 1.8rem;
-  font-weight: 600;
+    color: var(--clr-secondary);
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 .user-container > div > div > p {
-  color: #8e8e8e;
+    color: #8e8e8e;
 }
 .user-text-signout:hover {
-  color: var(--clr-dark);
-  cursor: pointer;
+    color: var(--clr-dark);
+    cursor: pointer;
 }
 
 .user-avatar {
-  height: 50px;
-  width: 50px;
-  border: 2px solid var(--clr-light);
-  border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: 2px solid var(--clr-light);
+    border-radius: 50%;
 }
 
 /* Restaurant filters */
 .page-header-shortlist {
-  text-align: left;
-  margin-top: 2em;
-  margin-bottom: -0.25em;
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: -0.25em;
 }
 .filters > form {
-  margin-top: 3em;
+    margin-top: 3em;
 }
 .primary-button-filters {
-  margin-top: 1.25em;
-  margin-bottom: 0.25em;
-  align-self: center;
-  background-color: var(--clr-primary);
-  border-radius: 0.5em;
-  border: solid 1px transparent;
-  color: #fff;
-  font-size: 1.8em;
-  cursor: pointer;
-  width: 90%;
-  height: 3em;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: all 0.1s ease-in-out;
+    margin-top: 1.25em;
+    margin-bottom: 0.25em;
+    align-self: center;
+    background-color: var(--clr-primary);
+    border-radius: 0.5em;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+    width: 90%;
+    height: 3em;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
 }
 .primary-button-filters:hover {
-  background-color: transparent;
-  border-color: var(--clr-primary);
-  color: var(--clr-primary);
-  transition: all 0.1s ease-in-out;
+    background-color: transparent;
+    border-color: var(--clr-primary);
+    color: var(--clr-primary);
+    transition: all 0.1s ease-in-out;
 }
 .fa-plus-square {
-  box-sizing: border-box;
-  color: var(--clr-primary);
-  height: 1em;
-  /* padding-right: 0.5em;
+    box-sizing: border-box;
+    color: var(--clr-primary);
+    height: 1em;
+    /* padding-right: 0.5em;
     margin-bottom: 0.5em; */
 }
 .fa-plus-square:active {
-  color: black;
-  height: 1em;
+    color: black;
+    height: 1em;
 }
 .primary-button-reviewlist {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  align-self: center;
-  background-color: var(--clr-primary);
-  border-radius: 0.5em;
-  border: solid 1px transparent;
-  color: #fff;
-  font-size: 1.5em;
-  cursor: pointer;
-  width: 70%;
-  height: 3em;
-  font-weight: 800;
-  text-transform: uppercase;
-  transition: all 0.1s ease-in-out;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    align-self: center;
+    background-color: var(--clr-primary);
+    border-radius: 0.5em;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    width: 70%;
+    height: 3em;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
 }
 .primary-button-reviewlist:hover {
-  background-color: transparent;
-  border-color: var(--clr-primary);
-  color: var(--clr-primary);
-  transition: all 0.1s ease-in-out;
+    background-color: transparent;
+    border-color: var(--clr-primary);
+    color: var(--clr-primary);
+    transition: all 0.1s ease-in-out;
 }
 
 /* Final shortlist */
 .page-header-shortlist {
-  margin-top: 0.5em;
+    margin-top: 0.5em;
 }
 .input-label-shortlist {
-  text-align: left;
-  margin-left: -2.5em;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  font-size: 1.8em;
-  color: var(--clr-dark);
-  font-weight: var(--fw-bold);
+    text-align: left;
+    margin-left: -2.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-size: 1.8em;
+    color: var(--clr-dark);
+    font-weight: var(--fw-bold);
 }
 .input-textbox-shortlist {
-  margin-top: 0.5em;
-  margin-bottom: 1em 0;
-  font-size: var(--fs-regular);
-  align-self: center;
-  padding: 0.5em;
-  width: 90%;
-  height: 3.5em;
-  border-radius: 0.5em;
-  border: solid 1px var(--clr-light);
+    margin-top: 0.5em;
+    margin-bottom: 1em 0;
+    font-size: var(--fs-regular);
+    align-self: center;
+    padding: 0.5em;
+    width: 90%;
+    height: 3.5em;
+    border-radius: 0.5em;
+    border: solid 1px var(--clr-light);
 }
 .input-textbox-shortlist:active {
-  border: solid 1px var(--clr-primary);
-  outline: none;
+    border: solid 1px var(--clr-primary);
+    outline: none;
 }
 
 .final-list-buttons-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2.5em;
-  height: 20vh;
-  justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5em;
+    height: 20vh;
+    justify-content: space-evenly;
 }
 .secondary-button-reviewlist {
-  margin-bottom: 0.25em;
-  align-self: center;
-  background-color: var(--clr-secondary);
-  border-radius: 0.5em;
-  border: solid 1px transparent;
-  color: #fff;
-  font-size: 1.5em;
-  cursor: pointer;
-  width: 70%;
-  height: 3em;
-  font-weight: 800;
-  text-transform: uppercase;
-  transition: all 0.1s ease-in-out;
+    margin-bottom: 0.25em;
+    align-self: center;
+    background-color: var(--clr-secondary);
+    border-radius: 0.5em;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    width: 70%;
+    height: 3em;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
 }
 .secondary-button-reviewlist:hover {
-  background-color: transparent;
-  border-color: var(--clr-secondary);
-  color: var(--clr-secondary);
-  transition: all 0.1s ease-in-out;
+    background-color: transparent;
+    border-color: var(--clr-secondary);
+    color: var(--clr-secondary);
+    transition: all 0.1s ease-in-out;
 }
 
 /* Voting page text */
 .voting-page-text {
-  margin-top: 1.5em;
-  margin-bottom: 3em;
+    margin-top: 1.5em;
+    margin-bottom: 3em;
 }
 /* does not change voting card at all, find another way */
 .voting-page-text > p {
-  font-size: var(--fs-regular);
-  margin: 0.5em;
+    font-size: var(--fs-regular);
+    margin: 0.5em;
 }
 .page-header-voted {
-  margin-top: 2em;
+    margin-top: 2em;
 }
 .page-header-voted-text {
-  font-size: var(--fs-regular);
-  margin: 0.5em;
-  margin-top: 2em;
-  line-height: 2em;
+    font-size: var(--fs-regular);
+    margin: 0.5em;
+    margin-top: 2em;
+    line-height: 2em;
 }
 
 /* Stars */
 .fa-star,
 .fa-star-half-alt,
 .fa-star {
-  color: rgb(224, 172, 0);
+    color: rgb(224, 172, 0);
 }
 
 .final-list-datetime > input {
-  margin-top: 0.5em;
-  margin-bottom: 1em 0;
-  font-size: var(--fs-regular);
-  align-self: center;
-  padding: 0.5em;
-  width: 90%;
-  height: 3.5em;
-  border-radius: 0.5em;
-  border: solid 1px var(--clr-light);
-  text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 1em 0;
+    font-size: var(--fs-regular);
+    align-self: center;
+    padding: 0.5em;
+    width: 90%;
+    height: 3.5em;
+    border-radius: 0.5em;
+    border: solid 1px var(--clr-light);
+    text-align: center;
 }
 
 .page-header-voting {
-  font-size: 4em;
-  color: var(--clr-primary);
-  font-family: var(--ff-primary);
-  text-align: left;
-  margin-left: 0.5em;
-  margin-top: -1em;
+    font-size: 4em;
+    color: var(--clr-primary);
+    font-family: var(--ff-primary);
+    text-align: left;
+    margin-left: 0.5em;
+    margin-top: -1em;
 }
 
 .Results > * {
-  font-size: var(--fs-regular);
+    font-size: var(--fs-regular);
 }
 .page-header-results {
-  text-align: center;
-  font-size: var(--fs-header);
-  color: var(--clr-primary);
-  font-family: var(--ff-primary);
-  margin-bottom: 0.5em;
+    text-align: center;
+    font-size: var(--fs-header);
+    color: var(--clr-primary);
+    font-family: var(--ff-primary);
+    margin-bottom: 0.5em;
 }
 .secondary-button-results {
-  margin-bottom: 1em;
-  align-self: center;
-  background-color: var(--clr-secondary);
-  border-radius: 1.5em;
-  border: solid 1px transparent;
-  color: #fff;
-  font-size: 1.5rem;
-  cursor: pointer;
-  width: 70%;
-  height: 2.5em;
-  font-weight: 800;
-  text-transform: uppercase;
-  transition: all 0.1s ease-in-out;
+    margin-bottom: 1em;
+    align-self: center;
+    background-color: var(--clr-secondary);
+    border-radius: 1.5em;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 70%;
+    height: 2.5em;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
 }
 .secondary-button-results:hover {
-  background-color: transparent;
-  border-color: var(--clr-secondary);
-  color: var(--clr-secondary);
-  transition: all 0.1s ease-in-out;
+    background-color: transparent;
+    border-color: var(--clr-secondary);
+    color: var(--clr-secondary);
+    transition: all 0.1s ease-in-out;
 }
 
 .results-top {
-  text-decoration: none;
-  color: var(--clr-dark);
-  margin: 1em;
-  margin-bottom: 1.5em;
-  display: block;
+    text-decoration: none;
+    color: var(--clr-dark);
+    margin: 1em;
+    margin-bottom: 1.5em;
+    display: block;
 }
 .event-url {
-  font-weight: var(--fw-bold);
-  font-size: 2em !important;
-  margin-top: 2em;
-  padding: 1em;
+    font-weight: var(--fw-bold);
+    font-size: 2em !important;
+    margin-top: 2em;
+    padding: 1em;
 }
 .voting-card-title {
-  font-weight: var(--fw-bold);
-  color: black;
-  padding-top: 1em;
-  font-size: var(--fs-regular);
+    font-weight: var(--fw-bold);
+    color: black;
+    padding-top: 1em;
+    font-size: var(--fs-regular);
 }
 .voting-card-category {
-  padding-bottom: 1em;
-  color: black;
+    padding-bottom: 1em;
+    color: black;
 }
 .yes-no-button {
-  background-color: Transparent;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  text-decoration: none;
-  outline: none;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    outline: none;
 }
 .voting-stars {
-  margin-bottom: 5em;
-  display: block;
+    margin-bottom: 5em;
+    display: block;
 }
 .winner-title {
-  font-weight: var(--fw-bold);
-  color: black;
-  font-size: 2rem;
+    font-weight: var(--fw-bold);
+    color: black;
+    font-size: 2rem;
 }
 .winner-category {
-  margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 .page-header-eventhistory {
-  margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
 .event-link {
-  color: var(--clr-secondary);
-  text-decoration: none;
+    color: var(--clr-secondary);
+    text-decoration: none;
 }
 .event-votes {
-  font-size: var(--fs-regular);
+    font-size: var(--fs-regular);
 }
 .page-event-history {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 .yelp-add-container {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 .yelp-logo {
-  width: 50px;
-  height: 20px;
-  content: url(../images/yelp_logo.png);
-  margin-top: 1.2em;
-  margin-left: 2.5em;
+    width: 50px;
+    height: 20px;
+    content: url(../images/yelp_logo.png);
+    margin-top: 1.2em;
+    margin-left: 2.5em;
 }
 
 /* Welcome Page Image */
 
-/* .welcome-section {
-  height: 100%;
-  position: relative;
+.welcome-section {
+    position: relative;
 }
 
 .welcome-background {
-  max-width: 100%;
-  object-fit: cover;
-  background-position: center;
-  position: absolute;
-  z-index: 10;
-  background-image: url(../images/landing_page_image.jpg);
-  height: 100vh;
-} */
+    left: 0;
+    top: -9em;
+    width: 100%;
+    height: 100vh;
+    object-fit: fixed;
+    background-position: left;
+    position: absolute;
+    z-index: -1;
+    background-image: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0),
+            rgba(32, 32, 32, 0.185)
+        ),
+        url(../images/landing_page_image.jpg);
+}
+
+/* Welcome Background Media Queries */
+
+@media screen and (max-height: 700px) {
+    .welcome-background {
+        top: -8.1em;
+    }
+}
+@media (max-width: 400px) and (max-height: 740px) {
+    .welcome-background {
+        top: -9.8em;
+    }
+}
+@media (min-width: 450px) and (max-height: 900px) {
+    .welcome-background {
+        top: -11em;
+    }
+}
+@media (max-width: 380px) and (max-height: 670px) {
+    .welcome-background {
+        top: -10em;
+    }
+}
+@media (min-width: 750px) and (max-height: 1024px) {
+    .welcome-background {
+        top: -12.1em;
+    }
+}
+@media (max-height: 900px) and (min-width: 800px) {
+    .welcome-background {
+        top: -9.2em;
+    }
+}
 
 @media screen and (min-width: 800px) {
-  html {
-    background-color: rgb(255, 255, 255);
-  }
-  body {
-    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
-      0 0 0 1px rgb(10 10 10 / 2%);
-    color: #4a4a4a;
-    min-height: 100vh;
-    max-width: 800px;
-    margin: auto;
-  }
+    html {
+        background-color: rgb(255, 255, 255);
+    }
+    body {
+        box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
+            0 0 0 1px rgb(10 10 10 / 2%);
+        color: #4a4a4a;
+        min-height: 100vh;
+        max-width: 800px;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .welcome-intro--text {
+        margin: 1em 0;
+        padding: 0.5rem;
+        font-size: var(--fs-regular);
+        max-width: 360px;
+        line-height: 1.5em;
+    }
 }
