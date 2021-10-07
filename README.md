@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+# Just Choose Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Contents
 
-## Available Scripts
+-   [Background](#background)
+-   [Technologies](#technologies)
+-   [Set-up for local use](#setup)
+-   [Live version](#live)
+    <a name=background></a>
 
-In the project directory, you can run:
+## Background
 
-### `npm start`
+As a group project Just Choose was created as a fun way to make group decisions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Deciding where to eat is difficult, Just Choose allows one person to provide a shortlist of restaurants, and provide the list for participants to vote on their choice.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Below we have provided a test username/password for demo purposes:
 
-### `npm test`
+```
+Username: test@just-choose.com
+Password: Qwerty!
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Feel free to create your own account if you prefer. Passwords are hashed with [Bcrypt](https://www.npmjs.com/package/bcrypt) before being stored in the database.
 
-### `npm run build`
+Just Choose is a React frontend web application that interacts with a MongoDb/Express backend, written in TypeScript.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Link to the hosted Just Choose here.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Just Choose - https://just-choose.netlify.app/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Backend repository - https://github.com/williamyap90/be-just-choose
 
-### `npm run eject`
+<a name=technologies></a>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Technologies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   [TypeScript](https://www.typescriptlang.org/) v4.4.3
+-   [ReactJS](https://reactjs.org/) v17.0.2
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Dependencies:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-   [Axios](https://axios-http.com/docs/intro) v0.21.1
+-   [react-tinder-card](https://www.npmjs.com/package/react-tinder-card) v1.4.0
+    <a name=setup></a>
 
-## Learn More
+## Setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Follow these steps to download the project onto your own machine:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   Clone the repo
+
+```
+git clone https://github.com/Sgavinmills/fe-just-choose
+```
+
+-   Navigate into the src directory
+-   Install all dependencies
+
+```
+npm install
+```
+
+-   Load the site on localhost with react
+
+```
+npm start
+```
+
+<a name=live></a>
+
+## Live Version
+
+The live version of the application can be viewed [here](https://just-choose.netlify.app/).
