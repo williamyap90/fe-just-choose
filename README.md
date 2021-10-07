@@ -51,7 +51,7 @@ Follow these steps to download the project onto your own machine:
 -   Clone the repo
 
 ```
-git clone https://github.com/Sgavinmills/fe-just-choose
+git clone https://github.com/williamyap90/fe-just-choose/
 ```
 
 -   Navigate into the src directory
